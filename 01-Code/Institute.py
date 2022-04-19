@@ -45,6 +45,7 @@ Created on xxx DdMmmYy;hh:mm: Version history:
 
 class Institute:
     __Debug    = False
+    _Instances = []
 
 #--------  "Built-in methods":
     def __init__(self, __Name=None, __Address=None, __Debug=False):
@@ -66,6 +67,8 @@ class Institute:
         if self.__Debug:
             print(" Institute.__init__: called")
 
+        Institute._Instances.append(self)
+
     def __repr__(self):
         return " Institute(Name, Address, Debug)"
 
@@ -79,6 +82,8 @@ class Institute:
 
 
 #--------  "Get methods" only
+    def getAddress(self):
+        return self._Address
         
     
 #--------  "Set methods" only

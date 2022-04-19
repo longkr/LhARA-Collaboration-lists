@@ -10,6 +10,8 @@ Test script for "Member" class
 
 """
 
+import os
+
 import Member as Mmbr
 
 ##! Start:
@@ -20,6 +22,7 @@ print("========  Member: tests start  ========")
 MemberTest = 1
 print()
 print("MemberTest:", MemberTest, " check built-in methods.")
+
 #.. __init__
 print("    __init__:")
 try:
@@ -44,6 +47,41 @@ print("    <---- __repr__ done.")
 print("    __str__:")
 print(Inst)
 print("    <---- __str__ done.")
+
+
+##! Check parsing and file handling methods:
+MemberTest += 1
+print()
+print("MemberTest:", MemberTest, " check read of member list.")
+
+LhARAPATH = os.getenv('LhARAPATH')
+filename  = os.path.join(LhARAPATH, \
+                         '11-CollaborationList/author-list12_04-KL1.csv')
+print("     ----> Member database file name:", filename)
+print("     ----> parseMemberDatabase load test")
+try:
+    Tst = Mmbr.Member.parseMemberDatabase()
+except:
+    print("        ----> Correctly trapped no filename.")
+try:
+    Tst = Mmbr.Member.parseMemberDatabase("Dummy")
+except:
+    print("        ----> Correctly trapped file does not exist.")
+Tst = Mmbr.Member.parseMemberDatabase(filename)
+print("        ----> OK!", Tst, " new members cretaed.")
+print("    <---- Load test done")
+
+##! Test sorting methods
+MemberTest += 1
+print()
+print("MemberTest:", MemberTest, " check sorting methods.")
+
+nClnd  = Mmbr.Member.cleanMemberDatabase()
+print("     ----> Cleaned", nClnd, "members.")
+Result = Mmbr.Member.sortAlphabeticalByName()
+print("     ---->", Result)
+Result = Mmbr.Member.sortAlphabeticalByName()
+print("     ---->", Result)
 
 ##! Complete:
 print()

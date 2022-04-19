@@ -14,7 +14,9 @@ Class Member:
 
   Instance attributes:
   --------------------
-   _Debug: Debug flag
+   __Debug: Debug flag
+   __Instances: List of instances
+   __AlphaMmbrSort
     
 
   Methods:
@@ -23,6 +25,30 @@ Class Member:
       __new__ : Creates instance
       __repr__: One liner with call.
       __str__ : Dump of constants
+
+
+  I/o and data-constructor methods:
+      parseStaffDatabase: Read staff database CSV file and create Staff
+                          instances.
+                     Input: Path to CSV file containing staff database.
+                    Return: Number of staff instances
+                     [Class method]
+
+        getStaffDatabase: Uses pandas to create pandas dataframe from
+                          CSV file.  Called from parseStaffDatabase.
+                     Input: Path to CSV file containing staff database.
+                    Return: Pandas dataframe instance containing staff 
+                            data base
+                     [Class method]
+
+   createPandasDataframe: Creates pandas data frame from instances of
+                          Staff.
+                      Return: Pandas dataframe instance
+                     [Class method]
+
+               createCSV: Creates CSV file from pandas dataframe.
+                       Inputs: Pandas dataframe instance
+                               Path to output file
 
 
   Get/set methods:   <-------- believed to be "self documenting"!
@@ -43,8 +69,16 @@ Created on xxx DdMmmYy;hh:mm: Version history:
 
 #.. import 
 
+import os
+from operator import attrgetter
+import pandas as pnds
+
+import Institute as Inst
+
 class Member:
-    __Debug    = False
+    _Debug         = False
+    _Instances     = []
+    _AlphaMmbrSort = None
 
 #--------  "Built-in methods":
     def __init__(self, \
@@ -79,11 +113,11 @@ class Member:
         self._Affiliations = __Affiliations
         self._ORCID        = __ORCID
 
-        if self.__Debug:
-            print(" Member.__init__: called")
+        Member._Instances.append(self)
 
     def __repr__(self):
-        return " Member(Title, Name, Surname, email, PubName, Organisation, Affiliations)"
+        return " Member(Title, Name, Surname, Initials, email, PubName, "  \
+            "Organisation, Affiliations)"
 
     def __str__(self):
         print(" Member parameters:")
@@ -100,19 +134,162 @@ class Member:
         return "     <---- __str__ done."
 
 
+#--------  I/o and data-constructor methods:
+    @classmethod
+    def parseMemberDatabase(cls, filename=None):
+
+        if filename == None:
+            raise NoMemberDataBaseFile(" Member.parseMemberDatabase: \
+                         no file name given, execution terminated.")
+        elif not os.path.isfile(filename):
+            raise MemberDataBaseFileDNE(" Member.parseMemberDatabase: \
+                   staff database file ", filename, \
+                   " does not exist, execution terminated.")
+
+        _MmbrDtbsParams = cls.getMemberDatabase(filename)
+        if cls._Debug:
+            xDummy = cls.printMemberDatabase(_MmbrDtbsParams)
+
+        iRow = _MmbrDtbsParams.index
+        for i in iRow:
+            Title     = _MmbrDtbsParams.iat[i,0]
+            Name      = _MmbrDtbsParams.iat[i,1]
+            Surname   = _MmbrDtbsParams.iat[i,2]
+            Initials  = _MmbrDtbsParams.iat[i,3]
+            Email     = _MmbrDtbsParams.iat[i,4]
+            PubName   = _MmbrDtbsParams.iat[i,5]
+            Org       = _MmbrDtbsParams.iat[i,6]
+            Address   = _MmbrDtbsParams.iat[i,7]
+            Affils    = _MmbrDtbsParams.iat[i,8]
+            OrcId     = _MmbrDtbsParams.iat[i,9]
+
+            #.. Find, or set, Org instance:
+            OrgInst = None
+            for iInst in Inst.Institute._Instances:
+                if iInst._Name == Org:
+                    OrgInst = iInst
+            if OrgInst == None:
+                OrgInst = Inst.Institute(Org, Address, True)
+                if Member._Debug:
+                    print(" Created: \n", OrgInst)
+            else:
+                if Member._Debug:
+                    print(" Using: \n", OrgInst)
+                
+            MmbrDummy = Member( \
+                                Title, Name, Surname, Initials, \
+                                Email, \
+                                PubName, \
+                                OrgInst, \
+                                Affils, \
+                                OrcId \
+                               )
+        return len(cls._Instances)
+
+    @classmethod
+    def getMemberDatabase(cls, _filename):
+        MmbrDBParams = pnds.read_csv(_filename)
+        return MmbrDBParams
+
+    @classmethod
+    def createPandasDataframe(cls):
+        MemberData = []
+        MemberData.append(cls.getHeader())
+        for inst in Member.instances:
+            MemberData.append(inst.getData())
+        MemberDataframe = pnds.DataFrame(MemberData)
+        if cls._Debug:
+            print(" Staff; createPandasDataframe: \n", MemberDataframe)
+        return MemberDataframe
+
+    @classmethod
+    def createCSV(cls, _MmbrDataFrame, _filename):
+        _MmbrDataFrame.to_csv(_filename)
+
+
 #--------  "Get methods" only
-        
+    def getSurname(self):
+        return self._Surname
     
+    def getInitials(self):
+        return self._Initials
+    
+
 #--------  "Set methods" only
         
     
 #--------  Print methods:
+    @classmethod
+    def printMemberDatabase(cls, _MmbrDtbsParams):
+        print(_MmbrDtbsParams)
+
     def print(self):
         print(" Member print:")
         return "     <---- Done."
 
-    
+        
+#--------  Member sort methods:
+    @classmethod
+    def sortAlphabeticalByName(cls):
+
+        OutStr = "Member.sortAlphabeticalByName: failed."
+        if cls._AlphaMmbrSort == None:
+            if cls._Debug:
+                print(" Member.sortAlphabeticalByName: Start.")
+                for Inst in cls._Instances:
+                    print(" Surname:", Inst._Surname, " Initials:", \
+                          Inst._Initials)
+        
+            cls._AlphaMmbrSort = \
+                sorted(cls._Instances, key=attrgetter('_Surname', \
+                                                      '_Initials'))
+
+            if cls._Debug:
+                print("     ----> Sorted list:")
+                for Inst in cls._AlphaMmbrSort:
+                    print(" Surname:", Inst._Surname, " Initials:", \
+                          Inst._Initials)
+                    
+            OutStr = "Member.sortAlphabeticalByName: "\
+                "sorted alphabetically by name."
+            
+        else:
+            OutStr = "Member.sortAlphabeticalByName: already sorted."
+        
+        return OutStr
+
+
+#--------  Processing methods
+    @classmethod
+    def cleanMemberDatabase(cls):
+        Deletions =[]
+        for iMmbr in cls._Instances:
+            if not isinstance(iMmbr._Surname, str):
+                Deletions.append(iMmbr)
+            if not isinstance(iMmbr._Initials, str):
+                Deletions.append(iMmbr)
+        
+        if cls._Debug:
+            for i in range(len(Deletions)):
+                print(" Member; cleanMemberDatabase: instances marked for ", \
+                      "deletion: ", Deletions[i]._Surname)
+
+        OldInstances = cls._Instances
+        cls._Instances = []
+        for iMmbr in OldInstances:
+            try:
+                i = Deletions.index(iMmbr)
+                del iMmbr
+            except ValueError:
+                cls._Instances.append(iMmbr)
+
+        return len(Deletions)
+
+
 #--------  Exceptions:
 class BadArgumentList(Exception):
     """Bad argument list"""
+    pass
+
+class MemberDataBaseFileDNE(Exception):
     pass

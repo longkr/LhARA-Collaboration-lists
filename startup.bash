@@ -47,9 +47,9 @@ fi
 export PYTHONPATH
 
 add="/99-Scratch"
-REPORTPATH="$HOMEPATH$add"
+LISTPATH="$HOMEPATH$add"
 if [ $debug == "true" ]; then
-    echo "Reports path set:"
-    echo "    " $REPORTPATH
+    echo "Lists path set:"
+    echo "    " $LISTPATH
 fi
-export REPORTPATH
+export LISTPATH
