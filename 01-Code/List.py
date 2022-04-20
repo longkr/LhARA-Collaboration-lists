@@ -189,7 +189,7 @@ class AlphaAuth(List):
         gInst = []
         for iMmbr in Mmbr.Member._AlphaMmbrSort:
             nAuth += 1
-            Author =  iMmbr.getInitials() + " " + iMmbr.getSurname()
+            Author =  iMmbr.getInitials() + "~" + iMmbr.getSurname()
             
             Org = iMmbr._Organisation
             if not Org._Name in gInst:
