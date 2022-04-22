@@ -76,7 +76,7 @@ print("ListTest:", ListTest, \
 LhARAPATH = os.getenv('LhARAPATH')
 try:
     filepath  = os.path.join(LhARAPATH, '99-Scratch')
-    AlphaAuthLst = Lst.AlphaAuth(filepath, "TestAlphaAuthList.tex")
+    AlphaAuthLst = Lst.AlphaAuth(filepath, "00b-AuthorList.tex")
 except:
     print("     ----> Failed to create alphabetic author list list instance!",
           "  Execution terminated.")

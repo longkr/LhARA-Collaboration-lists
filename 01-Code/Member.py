@@ -163,6 +163,19 @@ class Member:
             Affils    = _MmbrDtbsParams.iat[i,8]
             OrcId     = _MmbrDtbsParams.iat[i,9]
 
+            if cls._Debug:
+                print("     ----> Title   :", Title)
+                print("     ----> Name    :", Name)
+                print("     ----> Surname :", Surname)
+                print("     ----> Initials:", Initials)
+                print("     ----> Email   :", Email)
+                print("     ----> PubName :", PubName)
+                print("     ----> Org     :", Org)
+                print("     ----> Address :", Address)
+                print("     ----> Affils  :", Affils)
+                print("     ----> OrcId   :", OrcId)
+
+
             #.. Find, or set, Org instance:
             OrgInst = None
             for iInst in Inst.Institute._Instances:

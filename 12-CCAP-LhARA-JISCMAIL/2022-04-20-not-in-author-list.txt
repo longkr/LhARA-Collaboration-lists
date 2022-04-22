@@ -1,96 +1,99 @@
-People not presently in Author list for proposal                   20Apr22
+People not presently in Author list for proposal                   23Apr22
 ================================================
 
-philip.patrick.allport@CERN.CH           Philip Allport
-
-
-jeff.bamber@ICR.AC.UK                    Jeff Bamber
-paul.beard@UCL.AC.UK                     Paul Beard
-tbecker@MAXELER.COM                      Thomas Becker
-s.benson@NKI.NL                          Sean Benson
-alejnabeqiri99@GMAIL.COM                 Alejna Bequiri
-william.bertsche@MANCHESTER.AC.UK        William Bertsche
-bob.bingham@STFC.AC.UK                   Robert Bingham
-neil.bliss@STFC.AC.UK                    Neil Bliss
-e.boella@LANCASTER.AC.UK                 Elisabetta Boella
-stewart.boogert@RHUL.AC.UK               Stewart Boogert
-m.borghesi@QUB.AC.UK                     Marco Borghesi
-e.buchaca-domingo@IMPERIAL.AC.UK         Ester Buchaca-Domingo
-philip.burrows@PHYSICS.OX.AC.UK          Philip Burrows
-a.carabe@HAMPTONPROTON.ORG               Alejandro Carabe
-m.charlton@SWANSEA.AC.UK                 Mike Charlton
-jim.clarke@STFC.AC.UK                    Jim Clarke
-
-
-manjit.dosanjh@CERN.CH                   Manjit Dosanjh
-
-o.ettlinger13@IMPERIAL.AC.UK             Oliver Ettlinger
-timjfulcher@YAHOO.COM                    Tim Fulcher
+philip.patrick.allport@CERN.CH           Philip Allport   -- 21Apr: added,emailed
+jeff.bamber@ICR.AC.UK                    Jeff Bamber      -- 21Apr: added,emailed
+paul.beard@UCL.AC.UK                     Paul Beard       -- 21Apr: added,emailed
+m.charlton@SWANSEA.AC.UK                 Mike Charlton    -- 21Apr: added,emailed
+c.palmer@QUB.AC.UK                       Charlotte Palmer -- 21Apr: added,emailed
+william.bertsche@MANCHESTER.AC.UK        William Bertsche -- 21Apr: added,emailed
+bob.bingham@STFC.AC.UK                   Robert Bingham   -- 21Apr: added,emailed
+neil.bliss@STFC.AC.UK                    Neil Bliss       -- 22Apr: added,emailed
+stewart.boogert@RHUL.AC.UK               Stewart Boogert  -- 22Apr: added,emailed
+m.borghesi@QUB.AC.UK                     Marco Borghesi   -- 22Apr: added,emailed
+jim.clarke@STFC.AC.UK                    Jim Clarke       -- 22Apr: added,emailed
+manjit.dosanjh@CERN.CH                   Manjit Dosanjh   -- 22Apr: added,emailed
+o.ettlinger13@IMPERIAL.AC.UK             Oliver Ettlinger -- 22Apr: added,emailed
+stuart.green@UHB.NHS.UK                  Stuart Green     -- 22Apr: added,emailed
+green@LIVERPOOL.AC.UK                    Tim Greenshaw    -- 22Apr: added,emailed
+claire.hardiman@NHS.NET                  Claire Hardiman  -- 22Apr: added,emailed
 
 
 
-k.gleason@IMPERIAL.AC.UK                 Kelly Gleeson
 
-green@HEP.PH.LIV.AC.UK                   Stuart Green
-stuart.green@UHB.NHS.UK                  Stuart Green
-green@LIVERPOOL.AC.UK                    Tim Greenshaw
-sylvia.gruber@MEDUNIWIEN.AC.AT           Sylvia Gruber
+
 d.gujral@NHS.NET                         Dorothy Gujral
 hharrywho@HOTMAIL.COM                    Harry Hall
-claire.hardiman@NHS.NET                  Claire Hardiman
-laura.holland@RFI.AC.UK                  Laura Holland
-ahoward@MAIL.CERN.CH                     Alex Howard
-charlotte.jamieson@STFC.UKRI.ORG         Charlotte Jamieson
 
 angus.kirkland@RFI.AC.UK                 Angus Kirkland
+laura.holland@RFI.AC.UK                  Laura Holland
+
+ahoward@MAIL.CERN.CH                     Alex Howard
+
 a.knoll@IMPERIAL.AC.UK                   Aaron Knoll
+
 t.kokalova@BHAM.AC.UK                    Tzany Kokalova
-d.kordopati@IMPERIAL.AC.UK               Dion Kordopati
-
 ta-jen.kuo18@IMPERIAL.AC.UK              Ta-Jen Kuo
-
 jean-baptiste.lagrange@STFC.AC.UK        Jean-Baptiste Lagrange
 anthea.macintosh-larocque18@IMPERIAL.AC.UK Anthea Macintosh Laroque
 h.lau17@IMPERIAL.AC.UK                   Hin Tung Lau
-
-
-
 thongchai.masilela@CURIE.FR              Thongchai Masilela
 john.matheson@STFC.AC.UK                 John Matheson
-
-
-
 michael.merchant@MANCHESTER.AC.UK        Mike Merchant
-
-
 s.r.oneill@LANCASTER.AC.UK               Stuart O'Neil
 uwe.oelfke@ICR.AC.UK                     Uwe Oelfke
 hywel.owen@MANCHESTER.AC.UK              Hywel Owen
 hywel.owen@STFC.AC.UK                    Hywel Owen
-c.palmer@QUB.AC.UK                       Charlotte Palmer
-
 j.pasternak@IMPERIAL.AC.UK               Jaroslaaw Pasternal
 rajeev.pattathil@STFC.AC.UK              Rajeev Pattathil
 harish.poptani@LIVERPOOL.AC.UK           Harish Poptani
 j.pozimski@IMPERIAL.AC.UK                Juergen Pozimski
-
-
-
 t.price@BHAM.AC.UK                       Tony Price
 k.prise@QUB.AC.UK                        Kevin Prise
 p.ratoff@LANCASTER.AC.UK                 Peter Ratoff
 chris.rogers@STFC.AC.UK                  Christopher Rogers
-giuseppe.schettino@NPL.CO.UK             G. Schettino
 vincenzo.schiavo18@IMPERIAL.AC.UK        Vincenzo Schiavo
-
-
 david.c.speirs@STRATH.AC.UK              David Speirs
 rebecca.taylor18@IMPERIAL.AC.UK          Rebecca Taylor
-
 stephen@LEOCANCERCARE.COM                Stephen Towe
 peterw@LIVERPOOL.AC.UK                   Peter Weightman
-
 c.wheldon@BHAM.AC.UK                     Carl Wheldon
 t.wheldon@BHAM.AC.UK                     Tzany Kokalova Wheldon
-
 rachel.xiao@CORERAIN.COM                 Rachel Xiao
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+d.kordopati@IMPERIAL.AC.UK               Dion Kordopati
+k.gleason@IMPERIAL.AC.UK                 Kelly Gleeson  ** Acknowledge
+tbecker@MAXELER.COM                      Thomas Becker
+s.benson@NKI.NL                          Sean Benson
+alejnabeqiri99@GMAIL.COM                 Alejna Bequiri
+e.buchaca-domingo@IMPERIAL.AC.UK         Ester Buchaca-Domingo
+a.carabe@HAMPTONPROTON.ORG               Alejandro Carabe
+timjfulcher@YAHOO.COM                    Tim Fulcher
+sylvia.gruber@MEDUNIWIEN.AC.AT           Sylvia Gruber
+
+
+charlotte.jamieson@STFC.UKRI.ORG         Charlotte Jamieson
+
+
+
+
+
+
+
+
+
+
