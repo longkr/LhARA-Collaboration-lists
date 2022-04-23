@@ -35,6 +35,7 @@ Inst = Mmbr.Member( \
                     "John A. Smith", \
                     "Funny Farm", \
                     "DOE", \
+                    "Washington", \
                     "666", \
                     True)
 print('      ----> instance Inst created.')
@@ -56,7 +57,7 @@ print("MemberTest:", MemberTest, " check read of member list.")
 
 LhARAPATH = os.getenv('LhARAPATH')
 filename  = os.path.join(LhARAPATH, \
-                         '11-CollaborationList/author-list12_04-KL1.csv')
+                         '11-CollaborationList/new-spread.csv')
 print("     ----> Member database file name:", filename)
 print("     ----> parseMemberDatabase load test")
 try:

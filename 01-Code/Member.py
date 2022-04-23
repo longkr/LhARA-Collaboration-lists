@@ -86,7 +86,8 @@ class Member:
                  __email=None, \
                  __PubName=None, \
                  __Organisation=None, \
-                 __Affiliations=None, \
+                 __AffiliationCode=None, \
+                 __AffiliationAddr=None, \
                  __ORCID=None, \
                  __Debug=False):
 
@@ -95,6 +96,7 @@ class Member:
             raise BadArgumentList
         if __Debug:
             self._Debug = True
+            print(" Member.__init__: debug set")
 
         """
         if __Name == None or not isinstance(__Name, str):
@@ -103,33 +105,35 @@ class Member:
             raise BadArgumentList
         """
         
-        self._Title        = __Title
-        self._Name         = __Name
-        self._Surname      = __Surname
-        self._Initials     = __Initials
-        self._email        = __email
-        self._PubName      = __PubName 
-        self._Organisation = __Organisation
-        self._Affiliations = __Affiliations
-        self._ORCID        = __ORCID
+        self._Title            = __Title
+        self._Name             = __Name
+        self._Surname          = __Surname
+        self._Initials         = __Initials
+        self._email            = __email
+        self._PubName          = __PubName 
+        self._Organisation     = __Organisation
+        self._AffiliationCode = __AffiliationCode
+        self._AffiliationAddr = __AffiliationAddr
+        self._ORCID            = __ORCID
 
         Member._Instances.append(self)
 
     def __repr__(self):
         return " Member(Title, Name, Surname, Initials, email, PubName, "  \
-            "Organisation, Affiliations)"
+            "Organisation, AffilCode, AffilAddr, Debug)"
 
     def __str__(self):
         print(" Member parameters:")
-        print("            Title:", self._Title)
-        print("             Name:", self._Name)
-        print("          Surname:", self._Surname)
-        print("         Initials:", self._Initials)
-        print("            email:", self._email)
-        print("          PubName:", self._PubName)
-        print("     Organisation:", self._Organisation)
-        print("     Affiliations:", self._Affiliations)
-        print("            ORCID:", self._ORCID)
+        print("               Title:", self._Title)
+        print("                Name:", self._Name)
+        print("             Surname:", self._Surname)
+        print("            Initials:", self._Initials)
+        print("               email:", self._email)
+        print("             PubName:", self._PubName)
+        print("        Organisation:", self._Organisation)
+        print("    Affiliation code:", self._AffiliationCode)
+        print(" Affiliation address:", self._AffiliationAddr)
+        print("               ORCID:", self._ORCID)
               
         return "     <---- __str__ done."
 
@@ -160,20 +164,22 @@ class Member:
             PubName   = _MmbrDtbsParams.iat[i,5]
             Org       = _MmbrDtbsParams.iat[i,6]
             Address   = _MmbrDtbsParams.iat[i,7]
-            Affils    = _MmbrDtbsParams.iat[i,8]
-            OrcId     = _MmbrDtbsParams.iat[i,9]
+            AffilCode = _MmbrDtbsParams.iat[i,8]
+            AffilAddr = _MmbrDtbsParams.iat[i,9]
+            OrcId     = _MmbrDtbsParams.iat[i,10]
 
             if cls._Debug:
-                print("     ----> Title   :", Title)
-                print("     ----> Name    :", Name)
-                print("     ----> Surname :", Surname)
-                print("     ----> Initials:", Initials)
-                print("     ----> Email   :", Email)
-                print("     ----> PubName :", PubName)
-                print("     ----> Org     :", Org)
-                print("     ----> Address :", Address)
-                print("     ----> Affils  :", Affils)
-                print("     ----> OrcId   :", OrcId)
+                print("     ----> Title              :", Title)
+                print("     ----> Name               :", Name)
+                print("     ----> Surname            :", Surname)
+                print("     ----> Initials           :", Initials)
+                print("     ----> Email              :", Email)
+                print("     ----> PubName            :", PubName)
+                print("     ----> Org                :", Org)
+                print("     ----> Address            :", Address)
+                print("     ----> Affiliation code   :", AffilCode)
+                print("     ----> Affiliation address:", AffilAddr)
+                print("     ----> OrcId              :", OrcId)
 
 
             #.. Find, or set, Org instance:
@@ -184,18 +190,38 @@ class Member:
             if OrgInst == None:
                 OrgInst = Inst.Institute(Org, Address, True)
                 if Member._Debug:
-                    print(" Created: \n", OrgInst)
+                    print("     ----> Created: \n", OrgInst)
             else:
                 if Member._Debug:
-                    print(" Using: \n", OrgInst)
+                    print("     ----> Using: \n", OrgInst)
+
+            #.. Iff affilations, fill:
+            if str(AffilCode) != "nan":
+                if Member._Debug:
+                    print("        ----> Additional affiliation identified:",\
+                          AffilCode)
+                AffilInst = None
+                for iInst in Inst.Institute._Instances:
+                    if iInst._Name == AffilCode:
+                        AffilInst = iInst
+                    if AffilInst == None:
+                        AffilInst = Inst.Institute(AffilCode, AffilAddr, True)
+                        if Member._Debug:
+                            print("         ----> Created: \n", AffilInst)
+                    else:
+                        if Member._Debug:
+                            print("         ----> Using: \n", AffilInst)
+                
                 
             MmbrDummy = Member( \
                                 Title, Name, Surname, Initials, \
                                 Email, \
                                 PubName, \
                                 OrgInst, \
-                                Affils, \
-                                OrcId \
+                                AffilCode, \
+                                AffilAddr, \
+                                OrcId, \
+                                False
                                )
         return len(cls._Instances)
 
