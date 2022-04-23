@@ -68,7 +68,7 @@ print("    <---- __str__ done.")
 ListTest = 2
 print()
 filename  = os.path.join(LhARAPATH, \
-                         '11-CollaborationList/author-list12_04-KL1.csv')
+                         '11-CollaborationList/new-spread.csv')
 print("     ----> Member database file name:", filename)
 MemberList = Mmbr.Member.parseMemberDatabase(filename)
 print("ListTest:", ListTest, \
