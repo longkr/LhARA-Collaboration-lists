@@ -35,7 +35,6 @@ Inst = Mmbr.Member( \
                     "John A. Smith", \
                     "Funny Farm", \
                     "DOE", \
-                    "Washington", \
                     "666", \
                     True)
 print('      ----> instance Inst created.')

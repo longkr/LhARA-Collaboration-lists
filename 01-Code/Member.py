@@ -86,8 +86,7 @@ class Member:
                  __email=None, \
                  __PubName=None, \
                  __Organisation=None, \
-                 __AffiliationCode=None, \
-                 __AffiliationAddr=None, \
+                 __Affiliation=None, \
                  __ORCID=None, \
                  __Debug=False):
 
@@ -112,15 +111,14 @@ class Member:
         self._email            = __email
         self._PubName          = __PubName 
         self._Organisation     = __Organisation
-        self._AffiliationCode = __AffiliationCode
-        self._AffiliationAddr = __AffiliationAddr
+        self._Affiliation      = __Affiliation
         self._ORCID            = __ORCID
 
         Member._Instances.append(self)
 
     def __repr__(self):
         return " Member(Title, Name, Surname, Initials, email, PubName, "  \
-            "Organisation, AffilCode, AffilAddr, Debug)"
+            "Organisation, Affiliation, Debug)"
 
     def __str__(self):
         print(" Member parameters:")
@@ -131,8 +129,7 @@ class Member:
         print("               email:", self._email)
         print("             PubName:", self._PubName)
         print("        Organisation:", self._Organisation)
-        print("    Affiliation code:", self._AffiliationCode)
-        print(" Affiliation address:", self._AffiliationAddr)
+        print("         Affiliation:", self._Affiliation)
         print("               ORCID:", self._ORCID)
               
         return "     <---- __str__ done."
@@ -196,11 +193,11 @@ class Member:
                     print("     ----> Using: \n", OrgInst)
 
             #.. Iff affilations, fill:
+            AffilInst = None
             if str(AffilCode) != "nan":
                 if Member._Debug:
                     print("        ----> Additional affiliation identified:",\
                           AffilCode)
-                AffilInst = None
                 for iInst in Inst.Institute._Instances:
                     if iInst._Name == AffilCode:
                         AffilInst = iInst
@@ -218,8 +215,7 @@ class Member:
                                 Email, \
                                 PubName, \
                                 OrgInst, \
-                                AffilCode, \
-                                AffilAddr, \
+                                AffilInst, \
                                 OrcId, \
                                 False
                                )
