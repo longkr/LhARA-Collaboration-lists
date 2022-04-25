@@ -153,6 +153,8 @@ class Member:
 
         iRow = _MmbrDtbsParams.index
         for i in iRow:
+            AffilCode = []
+            AffilAddr = []
             Title     = _MmbrDtbsParams.iat[i,0]
             Name      = _MmbrDtbsParams.iat[i,1]
             Surname   = _MmbrDtbsParams.iat[i,2]
@@ -161,9 +163,11 @@ class Member:
             PubName   = _MmbrDtbsParams.iat[i,5]
             Org       = _MmbrDtbsParams.iat[i,6]
             Address   = _MmbrDtbsParams.iat[i,7]
-            AffilCode = _MmbrDtbsParams.iat[i,8]
-            AffilAddr = _MmbrDtbsParams.iat[i,9]
-            OrcId     = _MmbrDtbsParams.iat[i,10]
+            nAffil    = int(_MmbrDtbsParams.iat[i,8])
+            for iAff in range(nAffil):
+                AffilCode.append(str(_MmbrDtbsParams.iat[i,9+2*iAff]))
+                AffilAddr.append(str(_MmbrDtbsParams.iat[i,10+2*iAff]))
+            OrcId     = _MmbrDtbsParams.iat[i,11+2*(nAffil-1)]
 
             if cls._Debug:
                 print("     ----> Title              :", Title)
@@ -174,10 +178,10 @@ class Member:
                 print("     ----> PubName            :", PubName)
                 print("     ----> Org                :", Org)
                 print("     ----> Address            :", Address)
+                print("     ----> n affiliations     :", nAffil)
                 print("     ----> Affiliation code   :", AffilCode)
                 print("     ----> Affiliation address:", AffilAddr)
                 print("     ----> OrcId              :", OrcId)
-
 
             #.. Find, or set, Org instance:
             OrgInst = None
@@ -193,21 +197,30 @@ class Member:
                     print("     ----> Using: \n", OrgInst)
 
             #.. Iff affilations, fill:
-            AffilInst = None
-            if str(AffilCode) != "nan":
-                if Member._Debug:
-                    print("        ----> Additional affiliation identified:",\
-                          AffilCode)
-                for iInst in Inst.Institute._Instances:
-                    if iInst._Name == AffilCode:
-                        AffilInst = iInst
-                    if AffilInst == None:
-                        AffilInst = Inst.Institute(AffilCode, AffilAddr, True)
+            AffilInst = []
+            if int(nAffil) > 0 and len(AffilCode) > 0:
+                for iAff in range(len(AffilCode)):
+                    if Member._Debug:
+                        print( \
+                          "        ----> Additional affiliation identified:",\
+                               AffilCode[iAff])
+                    InstAd  = -1
+                    for iInst in Inst.Institute._Instances:
+                        if iInst._Name == AffilCode[iAff]:
+                            AffilInst.append(iInst)
+                            InstAd = len(AffilInst) - 1
+                            break
+                    if InstAd == -1:
+                        AffilInst.append(Inst.Institute(AffilCode[iAff], \
+                                                        AffilAddr[iAff], True))
+                        InstAd = 0
                         if Member._Debug:
-                            print("         ----> Created: \n", AffilInst)
+                            print("         ----> Created: \n", \
+                                  AffilInst[InstAd])
                     else:
                         if Member._Debug:
-                            print("         ----> Using: \n", AffilInst)
+                            print("         ----> Using: \n", \
+                                  AffilInst[InstAd])
                 
                 
             MmbrDummy = Member( \
