@@ -169,12 +169,7 @@ class AlphaAuth(List):
         self._Header.append("\\begin{center}")
         self._Header.append( \
        "  {\\bf \\color{BlueViolet} The LhARA collaboration} \\\\")
-        self._Header.append("  \\vspace{0.25cm}")
-        self._Header.append( \
-       "  {\\bf \\color{RedViolet} The author list is being compiled.} \\\\")
-        self._Header.append( \
-       "  {\\bf \\color{DarkGreen} Lead:} D. Kordopati \\\\")
-        self._Header.append("  \\vspace{0.25cm}")
+        self._Header.append("  \\vspace{0.50cm}")
 
     def getAuthors(self):
         nAuth = 0
@@ -196,14 +191,15 @@ class AlphaAuth(List):
                 gInst.append(Org._Name)
             nInst = gInst.index(Org._Name) + 1
 
-            if iMmbr._Affiliation != None:
-                Affil = iMmbr._Affiliation
-                if not Affil._Name in gInst:
-                    gInst.append(Affil._Name)
-                nAffil = gInst.index(Affil._Name) + 1
-                Line = "  " + Author + "$^{" + \
-                    str(nInst) + "," + str(nAffil) + \
-                    "}$"
+            if len(iMmbr._Affiliation) != 0:
+                Line = "  " + Author  + "$^{" + str(nInst)
+                for iAffil in range(len(iMmbr._Affiliation)):
+                    Affil = iMmbr._Affiliation[iAffil]
+                    if not Affil._Name in gInst:
+                        gInst.append(Affil._Name)
+                    nAffil = gInst.index(Affil._Name) + 1
+                    Line += "," + str(nAffil)
+                Line += "}$"
             else:
                 Line = "  " + Author + "$^{" + str(nInst) + "}$"
             
@@ -234,14 +230,15 @@ class AlphaAuth(List):
                 Line = "     $^{" + str(nInst) + "}$ \\> " + \
                     Org.getAddress() + "\\\\"
                 self._Lines.append(Line)
-            if iMmbr._Affiliation != None:
-                Affil = iMmbr._Affiliation
-                if not Affil._Name in gInst:
-                    gInst.append(Affil._Name)
-                    nInst += 1
-                    Line = "     $^{" + str(nInst) + "}$ \\> " + \
-                        Affil.getAddress() + "\\\\"
-                    self._Lines.append(Line)
+            if len(iMmbr._Affiliation) != 0:
+                for iAffil in range(len(iMmbr._Affiliation)):
+                    Affil = iMmbr._Affiliation[iAffil]
+                    if not Affil._Name in gInst:
+                        gInst.append(Affil._Name)
+                        nInst += 1
+                        Line = "     $^{" + str(nInst) + "}$ \\> " + \
+                            Affil.getAddress() + "\\\\"
+                        self._Lines.append(Line)
         Line = "    ~   \\> \\\\"
         self._Lines.append(Line)
         Line = "  \\end{tabbing}"
