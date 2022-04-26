@@ -199,29 +199,29 @@ class Member:
             #.. Iff affilations, fill:
             AffilInst = []
             if int(nAffil) > 0 and len(AffilCode) > 0:
+                if Surname == "Long":
+                    Member._Debug = True
+                else:
+                    Member._Debug = False
                 for iAff in range(len(AffilCode)):
                     if Member._Debug:
                         print( \
                           "        ----> Additional affiliation identified:",\
                                AffilCode[iAff])
-                    InstAd  = -1
-                    for iInst in Inst.Institute._Instances:
-                        if iInst._Name == AffilCode[iAff]:
-                            AffilInst.append(iInst)
-                            InstAd = len(AffilInst) - 1
-                            break
-                    if InstAd == -1:
+                    InstId = iInst.getInstituteId(AffilCode[iAff])
+                    if InstId == -1:
                         AffilInst.append(Inst.Institute(AffilCode[iAff], \
-                                                        AffilAddr[iAff], True))
-                        InstAd = 0
+                                                        AffilAddr[iAff], \
+                                                        Member._Debug)\
+                                         )
                         if Member._Debug:
-                            print("         ----> Created: \n", \
-                                  AffilInst[InstAd])
+                            print("         ----> Created:")
                     else:
+                        AffilInst.append(iInst.getInstituteInst(InstId))
                         if Member._Debug:
-                            print("         ----> Using: \n", \
-                                  AffilInst[InstAd])
-                
+                            print("         ----> Using:")
+                    if Member._Debug:
+                        print(AffilInst[iAff])
                 
             MmbrDummy = Member( \
                                 Title, Name, Surname, Initials, \

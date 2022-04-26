@@ -84,7 +84,24 @@ class Institute:
 #--------  "Get methods" only
     def getAddress(self):
         return self._Address
+
+    def getName(self):
+        return self._Name
+
+    @classmethod
+    def getInstituteId(cls, InstCode):
+        Id  = -1
+        Cnt = -1
+        for iInst in cls._Instances:
+            Cnt += 1
+            if iInst._Name == InstCode:
+                Id = Cnt
+                break
+        return Id
         
+    @classmethod
+    def getInstituteInst(cls, InstId):
+        return cls._Instances[InstId]
     
 #--------  "Set methods" only
         
