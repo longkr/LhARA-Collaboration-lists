@@ -70,6 +70,7 @@ Created on xxx DdMmmYy;hh:mm: Version history:
 #.. import 
 
 import os
+import math
 from operator import attrgetter
 import pandas as pnds
 
@@ -163,7 +164,9 @@ class Member:
             PubName   = _MmbrDtbsParams.iat[i,5]
             Org       = _MmbrDtbsParams.iat[i,6]
             Address   = _MmbrDtbsParams.iat[i,7]
-            nAffil    = int(_MmbrDtbsParams.iat[i,8])
+            nAffil    = 0
+            if not math.isnan(_MmbrDtbsParams.iat[i,8]):
+                nAffil    = int(_MmbrDtbsParams.iat[i,8])
             for iAff in range(nAffil):
                 AffilCode.append(str(_MmbrDtbsParams.iat[i,9+2*iAff]))
                 AffilAddr.append(str(_MmbrDtbsParams.iat[i,10+2*iAff]))

@@ -191,9 +191,6 @@ class AlphaAuth(List):
                 gInst.append(Org._Name)
             nInst  = gInst.index(Org._Name) + 1
 
-
-        
-            print(" ----> Afiliation:", iMmbr._Surname)
             if iMmbr._Surname == "Long":
                 print("     ----> nAffils:", len(iMmbr._Affiliation))
             if len(iMmbr._Affiliation) != 0:
