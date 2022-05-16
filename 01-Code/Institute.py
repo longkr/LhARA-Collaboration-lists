@@ -57,6 +57,8 @@ class Institute:
             self._Debug = True
 
         if __Name == None or not isinstance(__Name, str):
+            print(" >>>> Bad institute: Name, Address, Debug:",
+                  __Name, __Address, __Debug)
             raise BadArgumentList
         if __Address == None or not isinstance(__Address, str):
             raise BadArgumentList
