@@ -15,6 +15,7 @@ Class Institute:
   Instance attributes:
   --------------------
    _Debug: Debug flag
+   __AlphaInstSort
     
 
   Methods:
@@ -50,6 +51,7 @@ class Institute:
     _Instances     = []
     _AlphaInstSort = None
 
+    
 #--------  "Built-in methods":
     def __init__(self, __Name=None, __Address=None, __Debug=False):
 

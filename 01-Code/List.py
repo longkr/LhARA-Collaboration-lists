@@ -256,11 +256,21 @@ class AlphaAuth(List):
         
 
 """
+<<<<<<< HEAD
 Class AlphaInst: -------->  "Alphabetic institute list"; derived class  <------
 ================
 
 """
 class AlphaInst(List):
+=======
+Class AlphaAuth: -------->  "Alphabetic author list"; derived class  <--------
+================
+
+  
+
+"""
+class InstitutesShort(List):
+>>>>>>> c9f9ca0401a19d59d4b9ec69cf33343643665974
     __Debug   = True
 
     def __init__(self, _ListPath, _FileName):
@@ -269,11 +279,53 @@ class AlphaInst(List):
            --------> Get started:
         """
         
+<<<<<<< HEAD
         List.__init__(self, "Alphabetic institute list", _ListPath, _FileName)
 
         self.getHeader()
         self.getInstitutes()
 
+=======
+        List.__init__(self, "Short institute list", _ListPath, _FileName)
+
+        self.getInstitutes()
+
+        
+#--------  List elements:
+    def getInstitutes(self):
+        nInst = 0
+        gInst = []
+        for iMmbr in Mmbr.Member._AlphaInstSort:
+            Org = iMmbr._Organisation
+            if not Org._Name in gInst:
+                gInst.append(Org._Name)
+                nInst = gInst.index(Org._Name) + 1
+                Line = "     $^{" + str(nInst) + "}$ \\> " + \
+                    Org.getAddress() + "\\\\"
+                self._Lines.append(Line)
+            if len(iMmbr._Affiliation) != 0:
+                for iAffil in range(len(iMmbr._Affiliation)):
+                    Affil = iMmbr._Affiliation[iAffil]
+                    if not Affil._Name in gInst:
+                        gInst.append(Affil._Name)
+                        nInst = gInst.index(Affil._Name) + 1
+                        Line = "     $^{" + str(nInst) + "}$ \\> " + \
+                            Affil.getAddress() + "\\\\"
+                        self._Lines.append(Line)
+                        
+        Line = "    ~   \\> \\\\"
+        self._Lines.append(Line)
+        Line = "  \\end{tabbing}"
+        self._Lines.append(Line)
+        Line = "}"
+        self._Lines.append(Line)
+
+            
+    
+#--------  List:
+        
+
+>>>>>>> c9f9ca0401a19d59d4b9ec69cf33343643665974
                 
 #--------  List elements:
     def getHeader(self):
