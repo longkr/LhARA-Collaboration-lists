@@ -64,14 +64,15 @@ Created on Sun 17Apr22. Version history:
 import os
 from datetime import date
 
-import Member as Mmbr
-
+import Member    as Mmbr
+import Institute as Inst
 """
          -------->  Base "List" class  <--------
 """
 class List:
-    __Debug   = False
-    __Instances = []
+    __Debug        = False
+    __Instances    = []
+    _AlphaInstSort = None
 
     
 #--------  "Built-in methods":
@@ -254,8 +255,66 @@ class AlphaAuth(List):
 #--------  List:
         
 
-                
+"""
+Class AlphaInst: -------->  "Alphabetic institute list"; derived class  <------
+================
 
+"""
+class AlphaInst(List):
+    __Debug   = True
+
+    def __init__(self, _ListPath, _FileName):
+
+        """
+           --------> Get started:
+        """
+        
+        List.__init__(self, "Alphabetic institute list", _ListPath, _FileName)
+
+        self.getHeader()
+        self.getInstitutes()
+
+                
+#--------  List elements:
+    def getHeader(self):
+        self._Header.append("\\vspace{0.75cm}")
+        self._Header.append("\\begin{center}")
+        self._Header.append( \
+       "  {\\bf \\color{BlueViolet} The LhARA collaboration} \\\\")
+        self._Header.append("  \\vspace{0.50cm}")
+
+    def getInstitutes(self):
+        Line = "\\vspace{2.5cm}"
+        self._Lines.append(Line)
+        Line = "\\noindent\\textit{\\footnotesize"
+        self._Lines.append(Line)
+        Line = "  \\begin{tabbing}"
+        self._Lines.append(Line)
+        Line = "    \\hspace*{0.45cm}\\= \\hspace{17.5cm} \\kill"
+        self._Lines.append(Line)
+
+        if Inst.Institute._AlphaInstSort == None:
+            nClnd  = Mmbr.Member.cleanMemberDatabase()
+            Result = Inst.Institute.sortAlphabeticalByName()
+            if AlphaInst.__Debug:
+                print(" Authors cleaned", nClnd, "members.")
+                print(" sortAlphabeticalbyInstName:", Result)
+        
+        nInst = 0
+        for iInst in Inst.Institute._AlphaInstSort:
+            nInst += 1
+            Line = "     " + str(nInst) + \
+                   " \\> " + iInst.getAddress() + "\\\\"
+            self._Lines.append(Line)
+                        
+        Line = "    ~   \\> \\\\"
+        self._Lines.append(Line)
+        Line = "  \\end{tabbing}"
+        self._Lines.append(Line)
+        Line = "}"
+        self._Lines.append(Line)
+
+        
 #--------  Exceptions:
 class NoListNameProvided:
     pass

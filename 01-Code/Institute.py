@@ -43,9 +43,12 @@ Created on xxx DdMmmYy;hh:mm: Version history:
 
 #.. import 
 
+from operator import attrgetter
+
 class Institute:
-    __Debug    = False
-    _Instances = []
+    __Debug        = False
+    _Instances     = []
+    _AlphaInstSort = None
 
 #--------  "Built-in methods":
     def __init__(self, __Name=None, __Address=None, __Debug=False):
@@ -114,6 +117,34 @@ class Institute:
         return "     <---- Done."
 
     
+#--------  Member sort methods:
+    @classmethod
+    def sortAlphabeticalByName(cls):
+
+        OutStr = "Institute.sortAlphabeticalByName: failed."
+        if cls._AlphaInstSort == None:
+            if cls.__Debug:
+                print(" Institute.sortAlphabeticalByName: Start.")
+                for iInst in cls._Instances:
+                    print(" Name:", iInst._Name)
+        
+            cls._AlphaInstSort = \
+                sorted(cls._Instances, key=attrgetter('_Name'))
+
+            if cls.__Debug:
+                print("     ----> Sorted list:")
+                for iInst in cls._AlphaMmbrSort:
+                    print(" Name:", iInst._Name)
+                    
+            OutStr = "Institute.sortAlphabeticalByName: "\
+                "sorted alphabetically by name."
+            
+        else:
+            OutStr = "Institute.sortAlphabeticalByName: already sorted."
+        
+        return OutStr
+
+
 #--------  Exceptions:
 class BadArgumentList(Exception):
     """Bad argument list"""

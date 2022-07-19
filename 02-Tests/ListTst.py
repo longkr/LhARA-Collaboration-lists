@@ -65,6 +65,8 @@ print(str(Lst1))
 print("    <---- __str__ done.")
 
 ##! Check lists:
+
+#.. Author list:
 ListTest = 2
 print()
 filename  = os.path.join(LhARAPATH, \
@@ -92,6 +94,32 @@ print(str(AlphaAuthLst))
 print("    <---- __str__ done.")
 #.. write list:
 AlphaAuthLst.writeList()
+print("    <---- List written.")
+
+#.. Institute list:
+ListTest += 1
+print()
+print("ListTest:", ListTest, \
+      " check alphabetic institute list derived class methods.")
+try:
+    filepath  = os.path.join(LhARAPATH, '99-Scratch')
+    AlphaInstLst = Lst.AlphaInst(filepath, "01-InstituteList.tex")
+except:
+    print(\
+       "     ----> Failed to create alphabetic institute list list instance!",
+       "  Execution terminated.")
+    raise Exception
+print("    ----> Alphabetic institute list instance created.")
+#.. __repr__
+print("    __repr__:")
+print("      ---->", repr(AlphaInstLst))
+print("    <---- __repr__ done.")
+#.. __str__
+print("    __str__:")
+print(str(AlphaInstLst))
+print("    <---- __str__ done.")
+#.. write list:
+AlphaInstLst.writeList()
 print("    <---- List written.")
 
 
