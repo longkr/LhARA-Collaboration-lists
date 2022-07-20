@@ -256,21 +256,13 @@ class AlphaAuth(List):
         
 
 """
-<<<<<<< HEAD
+
 Class AlphaInst: -------->  "Alphabetic institute list"; derived class  <------
 ================
 
 """
 class AlphaInst(List):
-=======
-Class AlphaAuth: -------->  "Alphabetic author list"; derived class  <--------
-================
 
-  
-
-"""
-class InstitutesShort(List):
->>>>>>> c9f9ca0401a19d59d4b9ec69cf33343643665974
     __Debug   = True
 
     def __init__(self, _ListPath, _FileName):
