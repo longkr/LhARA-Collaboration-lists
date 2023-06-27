@@ -271,17 +271,10 @@ class AlphaInst(List):
            --------> Get started:
         """
         
-<<<<<<< HEAD
         List.__init__(self, "Alphabetic institute list", _ListPath, _FileName)
 
         self.getHeader()
         self.getInstitutes()
-
-=======
-        List.__init__(self, "Short institute list", _ListPath, _FileName)
-
-        self.getInstitutes()
-
         
 #--------  List elements:
     def getInstitutes(self):
@@ -314,11 +307,6 @@ class AlphaInst(List):
 
             
     
-#--------  List:
-        
-
->>>>>>> c9f9ca0401a19d59d4b9ec69cf33343643665974
-                
 #--------  List elements:
     def getHeader(self):
         self._Header.append("\\vspace{0.75cm}")
