@@ -48,14 +48,15 @@ print(" <--- Cleaning and sorting done.")
 ##! Emails not in membership list
 Block += 1
 print()
+JISCMlLst["email"] = JISCMlLst["email"].apply(str.lower)
 print(" ----> Block:", Block, " search for emails not in membership list.")
 for iMmbr in Mmbr.Member.getAlphaMemberSort():
-    JISCMlLst["email"] = JISCMlLst["email"].apply(str.lower)
     if iMmbr.getemail().lower() in JISCMlLst.values:
         pass
     else:
         print("        ----> Member", \
-              iMmbr.getSurname(), ", ", iMmbr.getInitials(),\
+              iMmbr.getSurname(), ", ", iMmbr.getInitials(), \
+              " email:", iMmbr.getemail(), \
               " not in JISCMail list.")
 print(" <--- List of emails not in membership list, done.")
 
