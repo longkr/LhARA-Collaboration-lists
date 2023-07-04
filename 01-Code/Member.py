@@ -202,10 +202,6 @@ class Member:
             #.. Iff affilations, fill:
             AffilInst = []
             if int(nAffil) > 0 and len(AffilCode) > 0:
-                if Surname == "Long":
-                    Member._Debug = True
-                else:
-                    Member._Debug = False
                 for iAff in range(len(AffilCode)):
                     if Member._Debug:
                         print( \

@@ -170,6 +170,7 @@ class AlphaAuth(List):
         self._Header.append("\\begin{center}")
         self._Header.append( \
        "  {\\bf \\color{BlueViolet} The LhARA collaboration} \\\\")
+        self._Header.append("\\end{center}")
         self._Header.append("  \\vspace{0.50cm}")
 
     def getAuthors(self):
@@ -256,21 +257,13 @@ class AlphaAuth(List):
         
 
 """
-<<<<<<< HEAD
+
 Class AlphaInst: -------->  "Alphabetic institute list"; derived class  <------
 ================
 
 """
 class AlphaInst(List):
-=======
-Class AlphaAuth: -------->  "Alphabetic author list"; derived class  <--------
-================
 
-  
-
-"""
-class InstitutesShort(List):
->>>>>>> c9f9ca0401a19d59d4b9ec69cf33343643665974
     __Debug   = True
 
     def __init__(self, _ListPath, _FileName):
@@ -279,18 +272,12 @@ class InstitutesShort(List):
            --------> Get started:
         """
         
-<<<<<<< HEAD
         List.__init__(self, "Alphabetic institute list", _ListPath, _FileName)
 
         self.getHeader()
         self.getInstitutes()
 
-=======
-        List.__init__(self, "Short institute list", _ListPath, _FileName)
 
-        self.getInstitutes()
-
-        
 #--------  List elements:
     def getInstitutes(self):
         nInst = 0
@@ -320,12 +307,6 @@ class InstitutesShort(List):
         Line = "}"
         self._Lines.append(Line)
 
-            
-    
-#--------  List:
-        
-
->>>>>>> c9f9ca0401a19d59d4b9ec69cf33343643665974
                 
 #--------  List elements:
     def getHeader(self):
