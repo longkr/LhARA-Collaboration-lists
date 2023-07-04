@@ -260,6 +260,13 @@ class Member:
     
     def getInitials(self):
         return self._Initials
+
+    def getemail(self):
+        return self._email
+
+    @classmethod
+    def getAlphaMemberSort(cls):
+        return cls._AlphaMmbrSort
     
 
 #--------  "Set methods" only

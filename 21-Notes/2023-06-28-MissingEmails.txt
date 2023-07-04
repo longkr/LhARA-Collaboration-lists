@@ -1,0 +1,23 @@
+2023-06-28:
+Missing emails from comparison of JISCMail LhARA list and present membership
+spreadsheet:
+ - Allport ,  P.  not in JISCMail list.
+ - Aymar ,  A.  not in JISCMail list.
+ - Bamber ,  J.  not in JISCMail list.
+ - Beard ,  P.  not in JISCMail list.
+ - Beqiri ,  A.   not in JISCMail list.
+ - Bingham ,  R.  not in JISCMail list.
+ - Boogert ,  S.  not in JISCMail list.
+ - Eriksson ,  S.  not in JISCMail list.
+ - Gibson ,  S.  not in JISCMail list.
+ - Hall ,  H.C.  not in JISCMail list.
+ - Hammond ,  E.M.  not in JISCMail list.
+ - Harris  ,  E.J.   not in JISCMail list.
+ - Kordopati ,  D.  not in JISCMail list.
+ - MacIntosh-LaRocque ,  A.E.  not in JISCMail list.
+ - Matheson ,  J.  not in JISCMail list.
+ - McGarrigle ,  J.M.  not in JISCMail list.
+ - McKenna ,  P.  not in JISCMail list.
+ - McNeish ,  I.  not in JISCMail list.
+ - O'Neill ,  S.R.  not in JISCMail list.
+ - Smith ,  R.A.  not in JISCMail list.

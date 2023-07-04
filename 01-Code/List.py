@@ -276,38 +276,7 @@ class AlphaInst(List):
 
         self.getHeader()
         self.getInstitutes()
-
-
-#--------  List elements:
-    def getInstitutes(self):
-        nInst = 0
-        gInst = []
-        for iMmbr in Mmbr.Member._AlphaInstSort:
-            Org = iMmbr._Organisation
-            if not Org._Name in gInst:
-                gInst.append(Org._Name)
-                nInst = gInst.index(Org._Name) + 1
-                Line = "     $^{" + str(nInst) + "}$ \\> " + \
-                    Org.getAddress() + "\\\\"
-                self._Lines.append(Line)
-            if len(iMmbr._Affiliation) != 0:
-                for iAffil in range(len(iMmbr._Affiliation)):
-                    Affil = iMmbr._Affiliation[iAffil]
-                    if not Affil._Name in gInst:
-                        gInst.append(Affil._Name)
-                        nInst = gInst.index(Affil._Name) + 1
-                        Line = "     $^{" + str(nInst) + "}$ \\> " + \
-                            Affil.getAddress() + "\\\\"
-                        self._Lines.append(Line)
-                        
-        Line = "    ~   \\> \\\\"
-        self._Lines.append(Line)
-        Line = "  \\end{tabbing}"
-        self._Lines.append(Line)
-        Line = "}"
-        self._Lines.append(Line)
-
-                
+        
 #--------  List elements:
     def getHeader(self):
         self._Header.append("\\vspace{0.75cm}")
