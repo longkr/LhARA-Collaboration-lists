@@ -36,6 +36,7 @@ Inst = Mmbr.Member( \
                     "Funny Farm", \
                     "DOE", \
                     "666", \
+                    True, \
                     True)
 print('      ----> instance Inst created.')
 print("    <---- __init__ done.")

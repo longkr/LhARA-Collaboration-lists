@@ -89,6 +89,7 @@ class Member:
                  __Organisation=None, \
                  __Affiliation=None, \
                  __ORCID=None, \
+                 __InstBrd=None, \
                  __Debug=False):
 
         self._Debug = False
@@ -114,6 +115,7 @@ class Member:
         self._Organisation     = __Organisation
         self._Affiliation      = __Affiliation
         self._ORCID            = __ORCID
+        self._InstBrd         = __InstBrd
 
         Member._Instances.append(self)
 
@@ -132,6 +134,7 @@ class Member:
         print("        Organisation:", self._Organisation)
         print("         Affiliation:", self._Affiliation)
         print("               ORCID:", self._ORCID)
+        print("     Institute Board:", self._InstBrd)
               
         return "     <---- __str__ done."
 
@@ -139,7 +142,9 @@ class Member:
 #--------  I/o and data-constructor methods:
     @classmethod
     def parseMemberDatabase(cls, filename=None):
-
+        if cls._Debug:
+            print(" Member.parseMemberDatabase: start!")
+            
         if filename == None:
             raise NoMemberDataBaseFile(" Member.parseMemberDatabase: \
                          no file name given, execution terminated.")
@@ -170,7 +175,11 @@ class Member:
             for iAff in range(nAffil):
                 AffilCode.append(str(_MmbrDtbsParams.iat[i,9+2*iAff]))
                 AffilAddr.append(str(_MmbrDtbsParams.iat[i,10+2*iAff]))
-            OrcId     = _MmbrDtbsParams.iat[i,11+2*(nAffil-1)]
+             
+            OrcId     = _MmbrDtbsParams.iat[i,13]
+            InstBrd   = False
+            if str(_MmbrDtbsParams.iat[i,14]).lower() == "ib":
+                InstBrd = True
 
             if cls._Debug:
                 print("     ----> Title              :", Title)
@@ -185,6 +194,7 @@ class Member:
                 print("     ----> Affiliation code   :", AffilCode)
                 print("     ----> Affiliation address:", AffilAddr)
                 print("     ----> OrcId              :", OrcId)
+                print("     ----> Institute Board    :", InstBrd)
 
             #.. Find, or set, Org instance:
             OrgInst = None
@@ -221,7 +231,7 @@ class Member:
                             print("         ----> Using:")
                     if Member._Debug:
                         print(AffilInst[iAff])
-                
+
             MmbrDummy = Member( \
                                 Title, Name, Surname, Initials, \
                                 Email, \
@@ -229,6 +239,7 @@ class Member:
                                 OrgInst, \
                                 AffilInst, \
                                 OrcId, \
+                                InstBrd, \
                                 False
                                )
         return len(cls._Instances)
@@ -263,6 +274,12 @@ class Member:
 
     def getemail(self):
         return self._email
+
+    def getOrganisation(self):
+        return self._Organisation
+    
+    def getInstBrd(self):
+        return self._InstBrd
 
     @classmethod
     def getAlphaMemberSort(cls):

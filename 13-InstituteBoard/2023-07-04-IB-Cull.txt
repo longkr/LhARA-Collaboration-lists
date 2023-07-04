@@ -1,0 +1,124 @@
+ ----> Block: 3  print members attending IB.
+        ----> Allport ,  P.  organisation: Phys-Brm
+        ----> Bamber ,  J.  organisation: ICR
+        ----> Becker ,  T.  organisation: Maxeler
+        ----> Boogert ,  S.  organisation: Phys-RHUL
+        ----> Borghesi ,  M.  organisation: Phys-Belf
+        ----> Burrows ,  P.N.  organisation: JAI-Oxf
+        ----> Charlton ,  M.  organisation: Phys-Swan
+        ----> Clarke ,  J.  organisation: STFC-DL
+        ----> Cox ,  B.  organisation: Bio-Med-UCL
+        ----> Gibson ,  S.  organisation: Phys-RHUL
+        ----> Green ,  S.  organisation: MedPhys-Brm
+        ----> Greenshaw ,  T.  organisation: Phys-Liv
+        ----> Gujral ,  D.  organisation: IC-NHST
+        ----> Hall ,  H.C.  organisation: IC-NHS-CX-PPI
+        ----> Hardiman ,  C.  organisation: RadPhys-Rbio-IC-NHS
+        ----> Harris  ,  E.J.   organisation: ICR
+        ----> Jones ,  W.G.  organisation: Phys-ICL
+        ----> Kirkby ,  K.J.  organisation: Bio-Med-Manch
+        ----> Kirkland ,  A.  organisation: RFI
+        ----> Kokalova ,  T.  organisation: Phys-Brm
+        ----> Kurup ,  A.  organisation: JAI-ICL
+        ----> Luk ,  W.G.  organisation: Comp-ICL
+        ----> McKenna ,  P.  organisation: Strath
+        ----> McLauchlan ,  R.  organisation: RadPhys-Rbio-IC-NHS
+        ----> Najmudin ,  Z.  organisation: Phys-ICL
+        ----> Prezado ,  Y.  organisation: Inst-Curie
+        ----> Price ,  T.  organisation: Phys-Brm
+        ----> Prise ,  K.M.  organisation: PGJCCR-Queens
+        ----> Rajeev ,  P.P.  organisation: CLF
+        ----> Ratoff ,  P.  organisation: Phys-Lanc
+        ----> Romano ,  F.  organisation: INFN-CT
+        ----> Schettino ,  G.  organisation: Phys-Surry
+        ----> Thomason ,  J.  organisation: ISIS
+        ----> Xiao ,  R.  organisation: Corerain
+ <--- IB attendees list done.
+
+ ----> Block: 4  IB members by institute.
+     ----> Institute: Aero-ICL
+     ----> Institute: Bio-Med-Manch
+         ----> iMmbr: Kirkby K.J.
+     ----> Institute: Bio-Med-UCL
+         ----> iMmbr: Cox B.
+     ----> Institute: CERN
+     ----> Institute: CI-DL
+     ----> Institute: CI-Strth
+     ----> Institute: CLF
+         ----> iMmbr: Rajeev P.P.
+     ----> Institute: Chrst-NHS
+     ----> Institute: Clttrbrdg
+     ----> Institute: Comp-ICL
+         ----> iMmbr: Luk W.G.
+     ----> Institute: Corerain
+         ----> iMmbr: Xiao R.
+     ----> Institute: IC-NHS-CX-PPI
+         ----> iMmbr: Hall H.C.
+     ----> Institute: IC-NHST
+         ----> iMmbr: Gujral D.
+     ----> Institute: ICL-DSC
+     ----> Institute: ICR
+         ----> iMmbr: Bamber J.
+         ----> iMmbr: Harris  E.J. 
+     ----> Institute: INFN-CT
+         ----> iMmbr: Romano F.
+     ----> Institute: ISIS
+         ----> iMmbr: Thomason J.
+     ----> Institute: Inst-Curie
+         ----> iMmbr: Prezado Y.
+     ----> Institute: JAI-ICL
+         ----> iMmbr: Kurup A.
+     ----> Institute: JAI-Oxf
+         ----> iMmbr: Burrows P.N.
+     ----> Institute: JAI-RHUL
+     ----> Institute: LEO-CC
+     ----> Institute: Liv-DMCCM
+     ----> Institute: Liv-ISMIB
+     ----> Institute: Maxeler
+         ----> iMmbr: Becker T.
+     ----> Institute: MedPhys-Brm
+         ----> iMmbr: Green S.
+     ----> Institute: MedPhys-Hmptn
+     ----> Institute: NPL
+     ----> Institute: OIRO
+     ----> Institute: Oxf-Mat
+     ----> Institute: PGJCCR-Queens
+         ----> iMmbr: Prise K.M.
+     ----> Institute: PP-Oxf
+     ----> Institute: PPD
+     ----> Institute: Phys-Belf
+         ----> iMmbr: Borghesi M.
+     ----> Institute: Phys-Brm
+         ----> iMmbr: Allport P.
+         ----> iMmbr: Kokalova T.
+         ----> iMmbr: Price T.
+     ----> Institute: Phys-Budk
+     ----> Institute: Phys-ICL
+         ----> iMmbr: Jones W.G.
+         ----> iMmbr: Najmudin Z.
+     ----> Institute: Phys-Lanc
+         ----> iMmbr: Ratoff P.
+     ----> Institute: Phys-Liv
+         ----> iMmbr: Greenshaw T.
+     ----> Institute: Phys-Manch
+     ----> Institute: Phys-Novos
+     ----> Institute: Phys-RHUL
+         ----> iMmbr: Boogert S.
+         ----> iMmbr: Gibson S.
+     ----> Institute: Phys-Surry
+         ----> iMmbr: Schettino G.
+     ----> Institute: Phys-Swan
+         ----> iMmbr: Charlton M.
+     ----> Institute: RFI
+         ----> iMmbr: Kirkland A.
+     ----> Institute: RO-Stnf
+     ----> Institute: RadPhys-Rbio-IC-NHS
+         ----> iMmbr: Hardiman C.
+         ----> iMmbr: McLauchlan R.
+     ----> Institute: STFC-DL
+         ----> iMmbr: Clarke J.
+     ----> Institute: Strath
+         ----> iMmbr: McKenna P.
+     ----> Institute: Uni-PSL
+     ----> Institute: rBioNCIA
+ <--- IB members by institute done.

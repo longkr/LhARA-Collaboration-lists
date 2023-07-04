@@ -105,7 +105,15 @@ class Institute:
                 Id = Cnt
                 break
         return Id
-        
+
+    @classmethod
+    def getInstitutes(cls):
+        return cls._Instances
+    
+    @classmethod
+    def getAlphaInstituteSort(cls):
+        return cls._AlphaInstSort
+    
     @classmethod
     def getInstituteInst(cls, InstId):
         return cls._Instances[InstId]
