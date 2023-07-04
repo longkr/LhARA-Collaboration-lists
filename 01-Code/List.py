@@ -315,11 +315,11 @@ class AlphaInst(List):
         self._Header.append("\\begin{center}")
         self._Header.append( \
        "  {\\bf \\color{BlueViolet} The LhARA collaboration} \\\\")
-        self._Header.append("  \\vspace{0.50cm}")
+        self._Header.append("  \\vspace{0.25cm}")
         self._Lines.append("\\end{center}")
 
     def getInstitutes(self):
-        Line = "\\vspace{2.5cm}"
+        Line = "\\vspace{0.25cm}"
         self._Lines.append(Line)
         Line = "\\noindent\\textit{\\footnotesize"
         self._Lines.append(Line)
