@@ -1,0 +1,13 @@
+This file is:
+           ~/KL-GIT/CCAP/02-LhARA/00-Collaboration-lists/Notes.txt
+
+**** Keep at top:
+ -
+ 
+--------  --------  --------  --------  --------  --------  --------  10Nov23
+Getting back to business in collaboration lists in preparation for the
+PA2 project plan.
+ - Check execution of all tests and scripts.  All run no issues.
+
+                 --------  -------- // --------  --------
+End of file
