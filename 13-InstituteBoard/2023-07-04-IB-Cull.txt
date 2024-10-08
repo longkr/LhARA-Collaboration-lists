@@ -37,88 +37,111 @@
 
  ----> Block: 4  IB members by institute.
      ----> Institute: Aero-ICL
+KL           - KL: Aaron ... 
      ----> Institute: Bio-Med-Manch
-         ----> iMmbr: Kirkby K.J.
+TG (Venn)         ----> iMmbr: Kirkby K.J.
      ----> Institute: Bio-Med-UCL
          ----> iMmbr: Cox B.
      ----> Institute: CERN
+KL           - KL become a member
      ----> Institute: CI-DL
+TG (Venn)           - TG -- CI representation
      ----> Institute: CI-Strth
+TG (Venn)           - TG -- CI representation
      ----> Institute: CLF
          ----> iMmbr: Rajeev P.P.
      ----> Institute: Chrst-NHS
+TG (Venn)           - TG -- Venn diagram problem
      ----> Institute: Clttrbrdg
+KL           - KL ask JPar
      ----> Institute: Comp-ICL
          ----> iMmbr: Luk W.G.
      ----> Institute: Corerain
          ----> iMmbr: Xiao R.
      ----> Institute: IC-NHS-CX-PPI
-         ----> iMmbr: Hall H.C.
+KL (S/w)         ----> iMmbr: Hall H.C.
      ----> Institute: IC-NHST
-         ----> iMmbr: Gujral D.
+KL         ----> iMmbr: Gujral D. <-- KL Iain McNeish or delegate
      ----> Institute: ICL-DSC
+TG (Venn)         - TG Venn Diagram
      ----> Institute: ICR
-         ----> iMmbr: Bamber J.
-         ----> iMmbr: Harris  E.J. 
+TG         ----> iMmbr: Bamber J.
+TG         ----> iMmbr: Harris  E.J.
      ----> Institute: INFN-CT
          ----> iMmbr: Romano F.
      ----> Institute: ISIS
          ----> iMmbr: Thomason J.
      ----> Institute: Inst-Curie
-         ----> iMmbr: Prezado Y.
+TG (Venn)         ----> iMmbr: Prezado Y.
      ----> Institute: JAI-ICL
-         ----> iMmbr: Kurup A.
+TG (Venn)         ----> iMmbr: Kurup A. <--- who
      ----> Institute: JAI-Oxf
-         ----> iMmbr: Burrows P.N.
+TG (Venn)         ----> iMmbr: Burrows P.N.
      ----> Institute: JAI-RHUL
+TG (Venn)     
      ----> Institute: LEO-CC
+KL         - KL ... 
      ----> Institute: Liv-DMCCM
+KL         - KL - Ask Jason ...
      ----> Institute: Liv-ISMIB
+KL         - KL - Ask Jason ...
      ----> Institute: Maxeler
          ----> iMmbr: Becker T.
      ----> Institute: MedPhys-Brm
          ----> iMmbr: Green S.
      ----> Institute: MedPhys-Hmptn
+KL         - KL ask
      ----> Institute: NPL
+KL         - KL Giuseppe
      ----> Institute: OIRO
+TG         - TG ... Amato to delegate
      ----> Institute: Oxf-Mat
+KL         - Kirkland -- 
      ----> Institute: PGJCCR-Queens
          ----> iMmbr: Prise K.M.
      ----> Institute: PP-Oxf
+TG (Venn)         - Phil, ask
      ----> Institute: PPD
+KL         - Ben Smart
      ----> Institute: Phys-Belf
          ----> iMmbr: Borghesi M.
      ----> Institute: Phys-Brm
-         ----> iMmbr: Allport P.
-         ----> iMmbr: Kokalova T.
-         ----> iMmbr: Price T.
+TG         ----> iMmbr: Allport P.
+TG         ----> iMmbr: Kokalova T.
+TG         ----> iMmbr: Price T.
      ----> Institute: Phys-Budk
+KL         - Delete
      ----> Institute: Phys-ICL
-         ----> iMmbr: Jones W.G.
-         ----> iMmbr: Najmudin Z.
+KL         ----> iMmbr: Jones W.G.
+KL         ----> iMmbr: Najmudin Z.
      ----> Institute: Phys-Lanc
          ----> iMmbr: Ratoff P.
      ----> Institute: Phys-Liv
          ----> iMmbr: Greenshaw T.
      ----> Institute: Phys-Manch
+TG         - W. Bertsche
      ----> Institute: Phys-Novos
+KL (del)         - ??
      ----> Institute: Phys-RHUL
-         ----> iMmbr: Boogert S.
-         ----> iMmbr: Gibson S.
+TG         ----> iMmbr: Boogert S.
+TG         ----> iMmbr: Gibson S.
      ----> Institute: Phys-Surry
          ----> iMmbr: Schettino G.
      ----> Institute: Phys-Swan
          ----> iMmbr: Charlton M.
      ----> Institute: RFI
-         ----> iMmbr: Kirkland A.
+KL         ----> iMmbr: Kirkland A.
      ----> Institute: RO-Stnf
+TG (Venn)         - Amato ??
      ----> Institute: RadPhys-Rbio-IC-NHS
-         ----> iMmbr: Hardiman C.
-         ----> iMmbr: McLauchlan R.
+KL         ----> iMmbr: Hardiman C.
+KL         ----> iMmbr: McLauchlan R.
      ----> Institute: STFC-DL
          ----> iMmbr: Clarke J.
      ----> Institute: Strath
          ----> iMmbr: McKenna P.
      ----> Institute: Uni-PSL
+TG (Venn)         - Yolanda
      ----> Institute: rBioNCIA
+TG (Venn)         - Check
  <--- IB members by institute done.

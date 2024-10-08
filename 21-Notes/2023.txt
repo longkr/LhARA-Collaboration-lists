@@ -1,3 +1,14 @@
+2023-07-06:
+Next steps agreed in discussion with Tim G:
+ - TG: Send email to IB list to say:
+   - Now starting to work on bid for continuation, more substantial. So,
+     making another pass to clean up author list and institute list.
+   - So, need to make sure consortium agreement is agreed and that we work
+     to understand how all institutes seek to be involved in and benefit from
+     the bid for continuation.
+
+
+
 2023-06-28:
 Missing emails from comparison of JISCMail LhARA list and present membership
 spreadsheet:
@@ -21,3 +32,4 @@ spreadsheet:
  - McNeish ,  I.  not in JISCMail list.
  - O'Neill ,  S.R.  not in JISCMail list.
  - Smith ,  R.A.  not in JISCMail list.
+All fixed.
