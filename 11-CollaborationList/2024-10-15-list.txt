@@ -1,0 +1,232 @@
+Belfast-Physics:
+	m.borghesi@QUB.AC.UK                     Marco Borghesi
+	c.palmer@QUB.AC.UK                       Charlotte Palmer
+
+Belfast-BioMed:
+	k.prise@QUB.AC.UK                        Kevin Prise
+
+
+Birmingham-Biology:
+	j.parsons@LIVERPOOL.AC.UK                Jason Parsons
+	c.wheldon@BHAM.AC.UK                     Carl Wheldon
+	t.wheldon@BHAM.AC.UK                     Tzany Kokalova Wheldon
+
+Birmingham-Physics:
+	allport@CERN.CH                          Phil Allport
+	philip.patrick.allport@CERN.CH           Philip Allport
+	t.kokalova@BHAM.AC.UK                    Tzany Kokalova
+	t.price@BHAM.AC.UK                       Tony Price
+	
+
+Birmingham-MedicalPhysics:
+	green@HEP.PH.LIV.AC.UK                   Stuart Green
+	stuart.green@UHB.NHS.UK                  Stuart Green
+
+
+CERN:
+	javier.prado.pico@CERN.CH                Javier Prado Pico
+	marlene.turner@CERN.CH                   Marlene Turner
+
+
+CI-Lanc:
+	e.boella@LANCASTER.AC.UK                 Elisabetta Boella
+	t.dascalu19@IMPERIAL.AC.UK               Titus-Stefan Dascalu
+	s.jamison@LANCASTER.AC.UK                Steven Jamison
+	p.ratoff@LANCASTER.AC.UK                 Peter Ratoff
+
+CI-Liv:
+	Narender.Kumar@LIVERPOOL.AC.UK           Narender Kumar
+	f.t.mada-parambil@LIVERPOOL.AC.UK        Farhana Thesni Mada Parambil
+	c.p.welsch@LIVERPOOL.AC.UK               Carsten Welsch
+					 	
+CI-Manch:
+	william.bertsche@MANCHESTER.AC.UK        William Bertsche
+	Stewart.Boogert@RHUL.AC.UK               Stewart Boogert
+
+
+CNRS-Inst-Curie:
+	thongchai.masilela@CURIE.FR              Thongchai Masilela
+	Frederic.Pouzoulet@CURIE.FR              Frederic Pouzoulet
+	yolanda.prezado@CURIE.FR                 Yolanda Prezado
+	alfredofernandezrod@GMAIL.COM            Alfredo Fernandez Rodriguez
+
+
+Corerain:
+	rachel.xiao@CORERAIN.COM                 Rachel Xiao
+
+
+HZDR:
+	u.schramm@HZDR.DE                        Ulrich Schramm
+
+Imperial-Aero:
+	a.knoll@IMPERIAL.AC.UK                   Aaron Knoll
+
+
+Imperial-Oncology:
+	d.gujral@NHS.NET                         Dorothy Gujral
+	claire.hardiman@NHS.NET                  Claire Hardiman
+	ruth.mclauchlan@NHS.NET                  Ruth McLauchlan
+	i.mcneish@IMPERIAL.AC.UK                 Iain McNeish
+	p.price@IMPERIAL.AC.UK                   Pat Price
+	patprice@PATPRICE.CO.UK                  Pat Price
+
+Imperial-Physics:
+	anubha.bal21@IMPERIAL.AC.UK              Anubha BAL
+	ahoward@MAIL.CERN.CH                     Alex Howard
+	y.hu22@IMPERIAL.AC.UK                    Yu Hu
+	w.g.jones@IMPERIAL.AC.UK                 Gareth Jones
+	r.a.smith@IMPERIAL.AC.UK                 Roland Smith
+
+Imperial-Strategic-Reseaerch-Coordinator:
+	e.buchaca-domingo@IMPERIAL.AC.UK         Ester Buchaca-Domingo
+
+
+ICR:
+	jeff.bamber@ICR.AC.UK                    Jeff Bamber
+	jeffrey.bamber@ICR.AC.UK                 Jeffrey Bamber
+	Emma.Harris@ICR.AC.UK                    Emma Harris
+	uwe.oelfke@ICR.AC.UK                     Uwe Oelfke
+
+
+INFN-Catania:
+	francesco.romano@CT.INFN.IT              Francesco Romano
+
+
+JAI-Imperial:
+	ginevra.casati18@IMPERIAL.AC.UK          Ginevra Casati
+	nicholas.dover08@IMPERIAL.AC.UK          Nicholas Dover
+	c.dyson24@IMPERIAL.AC.UK                 Calvin Dyson
+	o.ettlinger13@IMPERIAL.AC.UK             Oliver Ettlinger
+	cajamieson131@GMAIL.COM                  Charlotte Jamieson
+	ta-jen.kuo18@IMPERIAL.AC.UK              Ta-Jen Kuo
+	a.kurup@IMPERIAL.AC.UK                   Ajit Kurup
+	h.lau17@IMPERIAL.AC.UK                   Hin Tung Lau
+	longkr@IC.AC.UK                          Kenneth Long
+	k.long@IMPERIAL.AC.UK                    Kenneth Long
+	ken.long@STFC.AC.UK                      Kenneth Long
+	m.maxouti21@IMPERIAL.AC.UK               Maria Maxouti
+	josie.mcgarrigle19@IMPERIAL.AC.UK        Josie McGarrigle
+	z.najmudin@IMPERIAL.AC.UK                Zulfikar Najmudin
+	j.pasternak@IMPERIAL.AC.UK               Jaroslaaw Pasternal
+	j.pozimski@IMPERIAL.AC.UK                Juergen Pozimski
+	rebecca.taylor18@IMPERIAL.AC.UK          Rebecca Taylor
+
+
+JAI-Oxford:
+	philip.burrows@PHYSICS.OX.AC.UK          Philip Burrows
+	manjit.dosanjh@CERN.CH                   Manjit Dosanjh
+
+
+JAI-RHUL:
+	stephen.gibson@RHUL.AC.UK                Stephen Gibson
+	Matthew.Pereira.2023@LIVE.RHUL.AC.UK     Matthew Pereira
+	william.shields@RHUL.AC.UK               William Shields
+
+
+LBNL:
+	amcilvenny@LBL.GOV                       Aodhan McIlvenny
+	lobsthuebl@LBL.GOV                       Lieselotte Obst-Huebl
+	amsnijders@LBL.GOV                       Antoine Snijders
+
+
+Leo-Cancer-Care:
+	stephen@LEOCANCERCARE.COM                Stephen Towe
+
+
+Liverpool-Physics:
+	green@LIVERPOOL.AC.UK                    Tim Greenshaw
+	harish.poptani@LIVERPOOL.AC.UK           Harish Poptani
+	peterw@LIVERPOOL.AC.UK                   Peter Weightman
+
+
+Maxeler:
+	tbecker@MAXELER.COM                      Thomas Becker
+
+
+Manchester-MedPhys:
+	karen.kirkby@ICS.MANCHESTER.AC.UK        Karen Kirkby
+	karen.kirkby@MANCHESTER.AC.UK            Karen Kirkby
+
+
+NPL:
+	giuseppe.schettino@NPL.CO.UK             G. Schettino
+
+
+Oxf-OIRO:
+	amato.giaccia@ONCOLOGY.OX.AC.UK          Amato Giacca
+	giaccia@STANFORD.EDU                     Amato Giacca
+
+PPI:
+	hharrywho@HOTMAIL.COM                    Harry Hall
+
+
+QMUL-Physics:
+	p.hobson@QMUL.AC.UK                      Peter Hobson
+
+
+RFI:
+	laura.holland@RFI.AC.UK                  Laura Holland
+	angus.kirkland@RFI.AC.UK                 Angus Kirkland
+
+
+STFC-ASTeC:
+	jim.clarke@STFC.AC.UK                    Jim Clarke
+	andy.goulden@STFC.AC.UK                  Andy Goulden
+	mark.johnson@STFC.AC.UK                  Mark Johnson
+	hywel.owen@STFC.AC.UK                    Hywel Owen
+	chloe.pugh@STFC.AC.UK                    Chloe Pugh
+	susan.smith@STFC.AC.UK                   Susan Smith
+
+
+STFC-CLF:
+	rajeev.pattathil@STFC.AC.UK              Rajeev Pattathil
+
+STFC-ISIS:
+	galen.aymar@GMAIL.COM                    Galen Aymar
+	jean-baptiste.lagrange@STFC.AC.UK        Jean-Baptiste Lagrange
+	chris.rogers@STFC.AC.UK                  Christopher Rogers
+	john.thomason@STFC.AC.UK                 John Thomason
+
+
+STFC-TD
+	neil.bliss@STFC.AC.UK                    Neil Bliss
+	anna.vikhoreva@STFC.AC.UK                Anna Vikhoreva
+
+
+Strathclyde:
+	MATTHEW.ALDERTON@STRATH.AC.UK            Matthew Alderton
+	bob.bingham@STFC.AC.UK                   Bob Bingham
+	ross.gray@STRATH.AC.UK                   Ross Gray
+	p.mckenna@PHYS.STRATH.AC.UK              Paul McKenna
+	paul.mckenna@STRATH.AC.UK                Paul McKenna
+	david.c.speirs@STRATH.AC.UK              David Speirs
+	colin.whyte@STRATH.AC.UK                 Colin Whyte
+
+
+Swansea-Physics:
+	c.baker@SWANSEA.AC.UK                    Chris Baker
+	m.charlton@SWANSEA.AC.UK                 Mike Charlton
+	s.j.eriksson@SWANSEA.AC.UK               Stefan Eriksson
+	c.a.isaac@SWANSEA.AC.UK                  Aled Isaac
+	owen.nicholas@WALES.NHS.UK               Owen Nicholas
+	p.ruksasakchai@SWANSEA.AC.UK             Poram Ruksasakchai
+	
+
+UCL-MedPhys:
+	r.amos@UCL.AC.UK                         Richard Amos
+	b.cox@UCL.AC.UK                          Ben Cox
+
+Pension off?
+	timjfulcher@YAHOO.COM                    Tim Fulcher
+	sylvia.gruber@MEDUNIWIEN.AC.AT           Sylvia Gruber
+	karis.kungsamutr@MAIL.UTORONTO.CA        Karis Kungsamutr
+	anthea.macintosh-larocque18@IMPERIAL.AC.UK Anthea Macintosh Laroque
+	vania.lay19@IMPERIAL.AC.UK               Vania Lay
+	janki.pillai21@IMPERIAL.AC.UK            Janki Pilai
+
+	drpremrajp@NITC.AC.IN                    Prof. Prem raj Pushpakaran
+	zwangdq@CONNECT.UST.HK                   Zun Wang
+	wenlong.zhang@TECNICO.ULISBOA.PT         Wenlong Zhang
+
+
+
