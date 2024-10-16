@@ -1,20 +1,18 @@
-Belfast-Physics:
+Belfast-QUB-Physics:
 	m.borghesi@QUB.AC.UK                     Marco Borghesi
 	c.palmer@QUB.AC.UK                       Charlotte Palmer
 
-Belfast-BioMed:
+Belfast-QUB-PGJCCR:
 	k.prise@QUB.AC.UK                        Kevin Prise
 
 
 Birmingham-Biology:
 	j.parsons@LIVERPOOL.AC.UK                Jason Parsons
 	c.wheldon@BHAM.AC.UK                     Carl Wheldon
-	t.wheldon@BHAM.AC.UK                     Tzany Kokalova Wheldon
 
 Birmingham-Physics:
 	allport@CERN.CH                          Phil Allport
 	philip.patrick.allport@CERN.CH           Philip Allport
-	t.kokalova@BHAM.AC.UK                    Tzany Kokalova
 	t.price@BHAM.AC.UK                       Tony Price
 	
 
