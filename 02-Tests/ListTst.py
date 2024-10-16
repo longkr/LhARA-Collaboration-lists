@@ -6,7 +6,7 @@ Test script for "List" class
 
   Assumes python path includes LhARA code.
 
-  Script tests the methods written to create lists from the LhARA costing
+  Script tests the methods written to create lists from the LhARA collaboration
   data structure.
 
 """
@@ -64,15 +64,33 @@ print("    __str__:")
 print(str(Lst1))
 print("    <---- __str__ done.")
 
+#  --------> Do we need to clear up at this point!
+
 ##! Check lists:
 
 #.. Author list:
 ListTest = 2
 print()
-filename  = os.path.join(LhARAPATH, \
-                         '11-CollaborationList/new-spread.csv')
-print("     ----> Member database file name:", filename)
-MemberList = Mmbr.Member.parseMemberDatabase(filename)
+fileDIR  = os.path.join(LhARAPATH, '11-CollaborationList')
+print("     ----> Directory to get files from:", fileDIR)
+
+fileLIST = sorted(os.listdir(fileDIR))
+nMembers = 0
+for file in fileLIST:
+    print("         ----> Considering file:", file)
+
+    if file.find('.csv') <= 0:
+        pass
+    else:
+        print("             ----> Picked file:", file)
+        filePATH = os.path.join(fileDIR, file)
+        print("             ----> Path:", filePATH)
+        newMembers = Mmbr.Member.parseMemberDatabase(filePATH)
+        nMembers  += newMembers
+        print("             ----> Added:", newMembers, \
+              " new total:", nMembers)
+exit()
+
 print("ListTest:", ListTest, \
       " check alphabetic author list derived class methods.")
 LhARAPATH = os.getenv('LhARAPATH')
