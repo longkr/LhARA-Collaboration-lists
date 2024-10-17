@@ -350,6 +350,217 @@ class AlphaInst(List):
         self._Lines.append(Line)
 
         
+"""
+Class AlphaAuth: -------->  "Alphabetic author list"; derived class  <--------
+================
+
+  
+
+"""
+class AlphaAuth(List):
+    __Debug   = True
+
+    def __init__(self, _ListPath, _FileName):
+
+        """
+           --------> Get started:
+        """
+        
+        List.__init__(self, "Alphabetic authorlist", _ListPath, _FileName)
+
+        self.getHeader()
+        self.getAuthors()
+        self.getInstitutes()
+
+        
+#--------  List elements:
+    def getHeader(self):
+        self._Header.append("\\vspace{0.75cm}")
+        self._Header.append("\\begin{center}")
+        self._Header.append( \
+       "  {\\bf \\color{BlueViolet} The LhARA collaboration} \\\\")
+        self._Header.append("\\end{center}")
+        self._Header.append("\\vspace{0.50cm}")
+
+    def getAuthors(self):
+        self._Lines.append("\\begin{center}")
+        nAuth = 0
+        if Mmbr.Member._AlphaMmbrSort == None:
+            nClnd  = Mmbr.Member.cleanMemberDatabase()
+            Result = Mmbr.Member.sortAlphabeticalByName()
+            if AlphaAuth.__Debug:
+                print(" AlphaAuth(List).getAuthors: Cleaned", nClnd, \
+                      "members.")
+                print(" AlphaAuth(List).getAuthors:", Result)
+        nInst = 0
+        gInst = []
+        for iMmbr in Mmbr.Member._AlphaMmbrSort:
+            nAuth += 1
+            Author =  iMmbr.getInitials() + "~" + iMmbr.getSurname()
+            
+            Org = iMmbr._Organisation
+            if not Org._Name in gInst:
+                gInst.append(Org._Name)
+            nInst  = gInst.index(Org._Name) + 1
+
+            if iMmbr._Surname == "Long":
+                print("     ----> nAffils:", len(iMmbr._Affiliation))
+            if len(iMmbr._Affiliation) != 0:
+                Line = "  " + Author  + "$^{" + str(nInst)
+                for iAffil in range(len(iMmbr._Affiliation)):
+                    Affil = iMmbr._Affiliation[iAffil]
+                    if not Affil._Name in gInst:
+                        gInst.append(Affil._Name)
+                    nAffil = gInst.index(Affil._Name) + 1
+                    Line += "," + str(nAffil)
+                Line += "}$"
+            else:
+                Line = "  " + Author + "$^{" + str(nInst) + "}$"
+            
+            if nAuth < len(Mmbr.Member._Instances):
+                Line += ","
+                
+            self._Lines.append(Line)
+            
+        Line = "\\end{center}"
+        self._Lines.append(Line)
+
+    def getInstitutes(self):
+        Line = "\\vspace{2.5cm}"
+        self._Lines.append(Line)
+        Line = "\\noindent\\textit{\\footnotesize"
+        self._Lines.append(Line)
+        Line = "  \\begin{tabbing}"
+        self._Lines.append(Line)
+        Line = "    \\hspace*{0.45cm}\\= \\hspace{17.5cm} \\kill"
+        self._Lines.append(Line)
+        nInst = 0
+        gInst = []
+        for iMmbr in Mmbr.Member._AlphaMmbrSort:
+            Org = iMmbr._Organisation
+            if not Org._Name in gInst:
+                gInst.append(Org._Name)
+                nInst = gInst.index(Org._Name) + 1
+                Line = "     $^{" + str(nInst) + "}$ \\> " + \
+                    Org.getAddress() + "\\\\"
+                self._Lines.append(Line)
+            if len(iMmbr._Affiliation) != 0:
+                for iAffil in range(len(iMmbr._Affiliation)):
+                    Affil = iMmbr._Affiliation[iAffil]
+                    if not Affil._Name in gInst:
+                        gInst.append(Affil._Name)
+                        nInst = gInst.index(Affil._Name) + 1
+                        Line = "     $^{" + str(nInst) + "}$ \\> " + \
+                            Affil.getAddress() + "\\\\"
+                        self._Lines.append(Line)
+                        
+        Line = "    ~   \\> \\\\"
+        self._Lines.append(Line)
+        Line = "  \\end{tabbing}"
+        self._Lines.append(Line)
+        Line = "}"
+        self._Lines.append(Line)
+
+            
+    
+#--------  List:
+        
+
+"""
+
+Class AlphaInstAuth: -------->  Author list: ordered first by institute
+====================            (alphabetically), then alphabetically by
+                                author.
+
+"""
+class AlphaInstAuth(List):
+
+    __Debug   = True
+
+    def __init__(self, _ListPath, _FileName):
+
+        """
+           --------> Get started:
+        """
+        
+        List.__init__(self, "Author list by institute and author", \
+                      _ListPath, _FileName)
+
+        self.getHeader()
+        self.getAuthorsByInstitute()
+
+
+#--------  List elements:
+    def getAuthorsByInstitute(self):
+        nInst = 0
+        gInst = []
+        for iMmbr in Mmbr.Member._AlphaInstAuthSort:
+            Org = iMmbr._Organisation
+            if not Org._Name in gInst:
+                gInst.append(Org._Name)
+                nInst = gInst.index(Org._Name) + 1
+                Line = "     $^{" + str(nInst) + "}$ \\> " + \
+                    Org.getAddress() + "\\\\"
+                self._Lines.append(Line)
+            if len(iMmbr._Affiliation) != 0:
+                for iAffil in range(len(iMmbr._Affiliation)):
+                    Affil = iMmbr._Affiliation[iAffil]
+                    if not Affil._Name in gInst:
+                        gInst.append(Affil._Name)
+                        nInst = gInst.index(Affil._Name) + 1
+                        Line = "     $^{" + str(nInst) + "}$ \\> " + \
+                            Affil.getAddress() + "\\\\"
+                        self._Lines.append(Line)
+                        
+        Line = "    ~   \\> \\\\"
+        self._Lines.append(Line)
+        Line = "  \\end{tabbing}"
+        self._Lines.append(Line)
+        Line = "}"
+        self._Lines.append(Line)
+
+                
+#--------  List elements:
+    def getHeader(self):
+        self._Header.append("\\vspace{0.75cm}")
+        self._Header.append("\\begin{center}")
+        self._Header.append( \
+       "  {\\bf \\color{BlueViolet} The LhARA collaboration} \\\\")
+        self._Header.append("  \\vspace{0.25cm}")
+        self._Lines.append("\\end{center}")
+
+    def getInstitutes(self):
+        Line = "\\vspace{0.25cm}"
+        self._Lines.append(Line)
+        Line = "\\noindent\\textit{\\footnotesize"
+        self._Lines.append(Line)
+        Line = "  \\begin{tabbing}"
+        self._Lines.append(Line)
+        Line = "    \\hspace*{0.45cm}\\= \\hspace{17.5cm} \\kill"
+        self._Lines.append(Line)
+
+        if Inst.Institute._AlphaInstAuthSort == None:
+            nClnd  = Mmbr.Member.cleanMemberDatabase()
+            Result = Inst.Institute.sortAlphabeticalByName()
+            if AlphaInstAuth.__Debug:
+                print(" Authors cleaned", nClnd, "members.")
+                print(" sortAlphabeticalbyInstName:", Result)
+        
+        nInst = 0
+        for iInst in Inst.Institute._AlphaInstAuthSort:
+            nInst += 1
+            Line = "     " + str(nInst) + \
+                   " \\> " + iInst.getAddress() + "\\\\"
+            self._Lines.append(Line)
+                        
+        Line = "    ~   \\> \\\\"
+        self._Lines.append(Line)
+        Line = "  \\end{tabbing}"
+        self._Lines.append(Line)
+        Line = "}"
+        self._Lines.append(Line)
+
+        
 #--------  Exceptions:
 class NoListNameProvided:
     pass

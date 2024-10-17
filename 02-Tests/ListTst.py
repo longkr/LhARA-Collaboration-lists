@@ -91,8 +91,6 @@ for file in fileLIST:
               " new total:", nMembers)
         print("             ----> Member instances:", \
               len(Mmbr.Member.getinstances()))
-exit()
-
 print("ListTest:", ListTest, \
       " check alphabetic author list derived class methods.")
 LhARAPATH = os.getenv('LhARAPATH')
@@ -140,6 +138,33 @@ print(str(AlphaInstLst))
 print("    <---- __str__ done.")
 #.. write list:
 AlphaInstLst.writeList()
+print("    <---- List written.")
+
+
+#.. Authors by institute list:
+ListTest += 1
+print()
+print("ListTest:", ListTest, \
+      " check authors by alphabetic institute list derived class methods.")
+try:
+    filepath  = os.path.join(LhARAPATH, '99-Scratch')
+    AuthByInst = Lst.AlphaInstAuth(filepath, "01-AuthorsByInstitute.tex")
+except:
+    print(\
+       "     ----> Failed to create authors by institute list instance!",
+       "  Execution terminated.")
+    raise Exception
+print("    ----> Authors by institute list instance created.")
+#.. __repr__
+print("    __repr__:")
+print("      ---->", repr(AuthByInst))
+print("    <---- __repr__ done.")
+#.. __str__
+print("    __str__:")
+print(str(AuthByInst))
+print("    <---- __str__ done.")
+#.. write list:
+AuthByInst.writeList()
 print("    <---- List written.")
 
 
