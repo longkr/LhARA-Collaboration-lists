@@ -89,6 +89,8 @@ for file in fileLIST:
         nMembers  += newMembers
         print("             ----> Added:", newMembers, \
               " new total:", nMembers)
+        print("             ----> Member instances:", \
+              len(Mmbr.Member.getinstances()))
 exit()
 
 print("ListTest:", ListTest, \

@@ -14,9 +14,9 @@ Class Member:
 
   Instance attributes:
   --------------------
-   __Debug: Debug flag
-   __Instances: List of instances
-   __AlphaMmbrSort
+   _Debug: Debug flag
+   _Instances: List of instances
+   _AlphaMmbrSort
     
 
   Methods:
@@ -92,20 +92,12 @@ class Member:
                  __InstBrd=None, \
                  __Debug=False):
 
-        self._Debug = False
         if not isinstance(__Debug, bool):
             raise BadArgumentList
         if __Debug:
-            self._Debug = True
+            self.setDebug(True)
             print(" Member.__init__: debug set")
 
-        """
-        if __Name == None or not isinstance(__Name, str):
-            raise BadArgumentList
-        if __Address == None or not isinstance(__Address, str):
-            raise BadArgumentList
-        """
-        
         self._Title            = __Title
         self._Name             = __Name
         self._Surname          = __Surname
@@ -142,7 +134,7 @@ class Member:
 #--------  I/o and data-constructor methods:
     @classmethod
     def parseMemberDatabase(cls, filename=None):
-        if cls._Debug:
+        if cls.getDebug():
             print(" Member.parseMemberDatabase: start!")
             
         if filename == None:
@@ -154,10 +146,11 @@ class Member:
                    " does not exist, execution terminated.")
 
         _MmbrDtbsParams = cls.getMemberDatabase(filename)
-        if cls._Debug:
+        if cls.getDebug():
             xDummy = cls.printMemberDatabase(_MmbrDtbsParams)
 
-        iRow = _MmbrDtbsParams.index
+        iRow       = _MmbrDtbsParams.index
+        newMembers = 0
         for i in iRow:
             AffilCode = []
             AffilAddr = []
@@ -181,7 +174,7 @@ class Member:
             if str(_MmbrDtbsParams.iat[i,14]).lower() == "ib":
                 InstBrd = True
 
-            if cls._Debug:
+            if cls.getDebug():
                 print("     ----> Title              :", Title)
                 print("     ----> Name               :", Name)
                 print("     ----> Surname            :", Surname)
@@ -203,17 +196,18 @@ class Member:
                     OrgInst = iInst
             if OrgInst == None:
                 OrgInst = Inst.Institute(Org, Address, True)
-                if Member._Debug:
+                if cls.getDebug():
                     print("     ----> Created: \n", OrgInst)
+                iInst = OrgInst
             else:
-                if Member._Debug:
+                if cls.getDebug():
                     print("     ----> Using: \n", OrgInst)
 
             #.. Iff affilations, fill:
             AffilInst = []
             if int(nAffil) > 0 and len(AffilCode) > 0:
                 for iAff in range(len(AffilCode)):
-                    if Member._Debug:
+                    if cls.getDebug():
                         print( \
                           "        ----> Additional affiliation identified:",\
                                AffilCode[iAff])
@@ -223,13 +217,13 @@ class Member:
                                                         AffilAddr[iAff], \
                                                         Member._Debug)\
                                          )
-                        if Member._Debug:
+                        if cls.getDebug():
                             print("         ----> Created:")
                     else:
                         AffilInst.append(iInst.getInstituteInst(InstId))
-                        if Member._Debug:
+                        if cls.getDebug():
                             print("         ----> Using:")
-                    if Member._Debug:
+                    if cls.getDebug():
                         print(AffilInst[iAff])
 
             MmbrDummy = Member( \
@@ -242,7 +236,8 @@ class Member:
                                 InstBrd, \
                                 False
                                )
-        return len(cls._Instances)
+            newMembers += 1
+        return newMembers
 
     @classmethod
     def getMemberDatabase(cls, _filename):
@@ -256,7 +251,7 @@ class Member:
         for inst in Member.instances:
             MemberData.append(inst.getData())
         MemberDataframe = pnds.DataFrame(MemberData)
-        if cls._Debug:
+        if cls.getDebug():
             print(" Staff; createPandasDataframe: \n", MemberDataframe)
         return MemberDataframe
 
@@ -266,6 +261,14 @@ class Member:
 
 
 #--------  "Get methods" only
+    @classmethod
+    def getinstances(cls):
+        return cls._Instances
+
+    @classmethod
+    def getDebug(cls):
+        return cls._Debug
+    
     def getSurname(self):
         return self._Surname
     
@@ -287,6 +290,9 @@ class Member:
     
 
 #--------  "Set methods" only
+    @classmethod
+    def setDebug(cls, _Debug):
+        cls._Debug = _Debug
         
     
 #--------  Print methods:
@@ -305,7 +311,7 @@ class Member:
 
         OutStr = "Member.sortAlphabeticalByName: failed."
         if cls._AlphaMmbrSort == None:
-            if cls._Debug:
+            if cls.getDebug():
                 print(" Member.sortAlphabeticalByName: Start.")
                 for Inst in cls._Instances:
                     print(" Surname:", Inst._Surname, " Initials:", \
@@ -315,7 +321,7 @@ class Member:
                 sorted(cls._Instances, key=attrgetter('_Surname', \
                                                       '_Initials'))
 
-            if cls._Debug:
+            if cls.getDebug():
                 print("     ----> Sorted list:")
                 for Inst in cls._AlphaMmbrSort:
                     print(" Surname:", Inst._Surname, " Initials:", \
@@ -340,7 +346,7 @@ class Member:
             if not isinstance(iMmbr._Initials, str):
                 Deletions.append(iMmbr)
         
-        if cls._Debug:
+        if cls.getDebug():
             for i in range(len(Deletions)):
                 print(" Member; cleanMemberDatabase: instances marked for ", \
                       "deletion: ", Deletions[i]._Surname)

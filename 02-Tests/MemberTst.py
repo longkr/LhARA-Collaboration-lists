@@ -57,7 +57,7 @@ print("MemberTest:", MemberTest, " check read of member list.")
 
 LhARAPATH = os.getenv('LhARAPATH')
 filename  = os.path.join(LhARAPATH, \
-                         '11-CollaborationList/new-spread.csv')
+                         '11-CollaborationList/Strathclyde.csv')
 print("     ----> Member database file name:", filename)
 print("     ----> parseMemberDatabase load test")
 try:
