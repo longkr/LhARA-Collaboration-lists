@@ -1,3 +1,3 @@
-﻿Title,Name,Surname,Initials,email address,Name on Publications ,Organisation,Address,Number of affiliations,Affiliation code,Affiliation address,Affiliation code2,Affiliation address3,ORCID ,Role
-Prof. ,Ben ,Cox,B.,b.cox@ucl.ac.uk,B.T. Cox,Bio-Med-UCL,"Dept of Medical Physics and Biomedical Engineering, University College London, WC1E 6BT",0,,,,,,IB
-Prof. ,Richard,Amos,R.,r.amos@ucl.ac.uk,R.Amos,Bio-Med-UCL,"Dept of Medical Physics and Biomedical Engineering, University College London, WC1E 6BT",1,??-USA,,,,,WPM WPA
+Title,Name,Surname,Initials,email address,Name on Publications ,Organisation,Address,Number of affiliations,Affiliation code,Affiliation address,Affiliation code2,Affiliation address3,ORCID ,Role
+Prof. ,Ben ,Cox,B.,b.cox@ucl.ac.uk,B.T. Cox,Bio-Med-UCL,"Dept of Medical Physics and Biomedical Engineering, University College London, WC1E 6BT",False,,,,,,IB
+Prof. ,Richard,Amos,R.,r.amos@ucl.ac.uk,R.Amos,Bio-Med-UCL,"Dept of Medical Physics and Biomedical Engineering, University College London, WC1E 6BT",True,??-USA,,,,,WPM WPA
