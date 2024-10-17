@@ -145,7 +145,7 @@ print("    <---- List written.")
 ListTest += 1
 print()
 print("ListTest:", ListTest, \
-      " check authors by alphabetic institute list derived class methods.")
+      " check authors by alphabetic institute:")
 try:
     filepath  = os.path.join(LhARAPATH, '99-Scratch')
     AuthByInst = Lst.AlphaInstAuth(filepath, "01-AuthorsByInstitute.tex")

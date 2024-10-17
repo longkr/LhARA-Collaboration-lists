@@ -492,33 +492,40 @@ class AlphaInstAuth(List):
 
 #--------  List elements:
     def getAuthorsByInstitute(self):
-        nInst = 0
-        gInst = []
-        for iMmbr in Mmbr.Member._AlphaInstAuthSort:
-            Org = iMmbr._Organisation
-            if not Org._Name in gInst:
-                gInst.append(Org._Name)
-                nInst = gInst.index(Org._Name) + 1
-                Line = "     $^{" + str(nInst) + "}$ \\> " + \
-                    Org.getAddress() + "\\\\"
-                self._Lines.append(Line)
-            if len(iMmbr._Affiliation) != 0:
-                for iAffil in range(len(iMmbr._Affiliation)):
-                    Affil = iMmbr._Affiliation[iAffil]
-                    if not Affil._Name in gInst:
-                        gInst.append(Affil._Name)
-                        nInst = gInst.index(Affil._Name) + 1
-                        Line = "     $^{" + str(nInst) + "}$ \\> " + \
-                            Affil.getAddress() + "\\\\"
-                        self._Lines.append(Line)
-                        
-        Line = "    ~   \\> \\\\"
-        self._Lines.append(Line)
-        Line = "  \\end{tabbing}"
-        self._Lines.append(Line)
-        Line = "}"
-        self._Lines.append(Line)
 
+        if Mmbr.Member.getInstMemberSort() == None:
+            Mmbr.Member.sortByInstituteAndName()
+
+        OldOrg   = None
+        AuthLine = ""
+        for iMmbr in Mmbr.Member.getInstMemberSort():
+            Org  = iMmbr._Organisation
+            
+            if Org != OldOrg:
+                if AuthLine != "":
+                    self._Lines.append(AuthLine)
+                    Line = " "
+                    self._Lines.append(Line)
+                    Line = "\\vspace{0.5cm}"
+                    self._Lines.append(Line)
+                    
+                Line = "\\noindent \\textit{" + Org.getAddress() + "} \\\\"
+                self._Lines.append(Line)
+                
+                OldOrg = Org
+                AuthLine = ""
+
+            if AuthLine != "": AuthLine += ", "
+            
+            Author    =  iMmbr.getInitials() + "~" + iMmbr.getSurname()
+            AuthLine += Author
+
+        self._Lines.append(AuthLine)
+        Line = " "
+        self._Lines.append(Line)
+        Line = "\\vspace{0.5cm}"
+        self._Lines.append(Line)
+                    
                 
 #--------  List elements:
     def getHeader(self):

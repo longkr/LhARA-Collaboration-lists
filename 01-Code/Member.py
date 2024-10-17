@@ -9,14 +9,15 @@ Class Member:
 
   Class attributes:
   -----------------
-  __xxxx: Description
+   __xxxx: Description
+   _Debug: Debug flag
+   _Instances: List of instances
+   _AlphaMmbrSort
+   _InstMmbrSort
       
 
   Instance attributes:
   --------------------
-   _Debug: Debug flag
-   _Instances: List of instances
-   _AlphaMmbrSort
     
 
   Methods:
@@ -80,6 +81,7 @@ class Member:
     _Debug         = False
     _Instances     = []
     _AlphaMmbrSort = None
+    _InstMmbrSort  = None
 
 #--------  "Built-in methods":
     def __init__(self, \
@@ -288,11 +290,19 @@ class Member:
     def getAlphaMemberSort(cls):
         return cls._AlphaMmbrSort
     
+    @classmethod
+    def getInstMemberSort(cls):
+        return cls._InstMmbrSort
+    
 
 #--------  "Set methods" only
     @classmethod
     def setDebug(cls, _Debug):
         cls._Debug = _Debug
+
+    @classmethod
+    def setInstMemberSort(cls, _sortedMembers):
+        cls._InstMmbrSort = _sortedMembers
         
     
 #--------  Print methods:
@@ -332,6 +342,39 @@ class Member:
             
         else:
             OutStr = "Member.sortAlphabeticalByName: already sorted."
+        
+        return OutStr
+
+    @classmethod
+    def sortByInstituteAndName(cls):
+
+        OutStr = "Member.sortByInstituteAndName: failed."
+        if cls.getInstMemberSort() == None:
+            if cls.getDebug():
+                print(" Member.sortByInstituteAndName: Start.")
+        
+            sortedMembers = \
+                sorted(cls.getinstances(), \
+                       key=attrgetter('_Organisation._Name', \
+                                      '_Surname', \
+                                      '_Initials') \
+                       )
+
+            if cls.getDebug():
+                print("     ----> Sorted list:")
+                for iMMBR in sortedMembers:
+                    print(iMMBR.getOrganisation().getName(), \
+                          iMMBR.getSurname(), \
+                          iMMBR.getInitials() \
+                          )
+
+            cls.setInstMemberSort(sortedMembers)
+            
+            OutStr = "Member.sortByInstituteAndName: "\
+                "sorted alphabetically by name."
+            
+        else:
+            OutStr = "Member.sortByInstituteAndName: already sorted."
         
         return OutStr
 
