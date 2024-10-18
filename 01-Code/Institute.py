@@ -89,6 +89,10 @@ class Institute:
 
 
 #--------  "Get methods" only
+    @classmethod
+    def getinstances(cls):
+        return cls._Instances
+
     def getAddress(self):
         return self._Address
 
