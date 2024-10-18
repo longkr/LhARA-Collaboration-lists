@@ -127,7 +127,14 @@ class List:
 
     
 #--------  List:
-        
+    def getHeader(self):
+        self._Header.append("\\vspace{0.75cm}")
+        self._Header.append("\\begin{center}")
+        self._Header.append( \
+       "  {\\bf \\color{BlueViolet} The LhARA collaboration} \\\\")
+        self._Header.append("  \\vspace{0.25cm}")
+        self._Lines.append("\\end{center}")
+
     
 #--------  I/o methods
     def writeList(self):
@@ -160,7 +167,6 @@ class AlphaInst(List):
         List.__init__(self, "Alphabetic institute list", _ListPath, _FileName)
 
         self.getHeader()
-        print(" Here")
         self.getInstitutes()
 
 
@@ -175,27 +181,16 @@ class AlphaInst(List):
 
 
 #--------  List elements:
-    def getHeader(self):
-        self._Header.append("\\vspace{0.75cm}")
-        self._Header.append("\\begin{center}")
-        self._Header.append( \
-       "  {\\bf \\color{BlueViolet} The LhARA collaboration} \\\\")
-        self._Header.append("  \\vspace{0.25cm}")
-        self._Lines.append("\\end{center}")
-
     def getInstitutes(self):
-        print(" Here: line 302")
         Line = "\\vspace{0.25cm}"
         self._Lines.append(Line)
         Line = "\\noindent\\textit{\\footnotesize"
         self._Lines.append(Line)
-        Line = "  \\begin{tabbing}"
-        self._Lines.append(Line)
-        Line = "    \\hspace*{0.45cm}\\= \\hspace{17.5cm} \\kill"
+        Line = "  \\begin{tabular}{ c p{15cm} }"
         self._Lines.append(Line)
 
         nClnd  = Mmbr.Member.cleanMemberDatabase()
-        
+
         if Inst.Institute._AlphaInstSort == None:
             Result = Inst.Institute.sortAlphabeticalByName()
             if self.getDebug():
@@ -206,12 +201,22 @@ class AlphaInst(List):
         for iInst in Inst.Institute._AlphaInstSort:
             nInst += 1
             Line = "     " + str(nInst) + \
-                   " \\> " + iInst.getAddress() + "\\\\"
+                   " & " + iInst.getAddress() + "\\\\"
             self._Lines.append(Line)
-                        
-        Line = "    ~   \\> \\\\"
-        self._Lines.append(Line)
-        Line = "  \\end{tabbing}"
+
+            if nInst == 35:
+                Line = "  \\end{tabular}"
+                self._Lines.append(Line)
+                Line = "}"
+                self._Lines.append(Line)
+                Line = " "
+                self._Lines.append(Line)
+                Line = "\\noindent\\textit{\\footnotesize"
+                self._Lines.append(Line)
+                Line = "  \\begin{tabular}{ c p{15cm} }"
+                self._Lines.append(Line)
+
+        Line = "  \\end{tabular}"
         self._Lines.append(Line)
         Line = "}"
         self._Lines.append(Line)
@@ -242,14 +247,6 @@ class AlphaAuth(List):
 
         
 #--------  List elements:
-    def getHeader(self):
-        self._Header.append("\\vspace{0.75cm}")
-        self._Header.append("\\begin{center}")
-        self._Header.append( \
-       "  {\\bf \\color{BlueViolet} The LhARA collaboration} \\\\")
-        self._Header.append("\\end{center}")
-        self._Header.append("\\vspace{0.50cm}")
-
     def getAuthors(self):
         self._Lines.append("\\begin{center}")
         nAuth = 0
@@ -292,14 +289,15 @@ class AlphaAuth(List):
         self._Lines.append(Line)
 
     def getInstitutes(self):
+        
+        Line = " "
         Line = "\\vspace{2.5cm}"
         self._Lines.append(Line)
         Line = "\\noindent\\textit{\\footnotesize"
         self._Lines.append(Line)
-        Line = "  \\begin{tabbing}"
+        Line = "  \\begin{tabular}{ c p{15cm} }"
         self._Lines.append(Line)
-        Line = "    \\hspace*{0.45cm}\\= \\hspace{17.5cm} \\kill"
-        self._Lines.append(Line)
+        
         nInst = 0
         gInst = []
         for iMmbr in Mmbr.Member._AlphaMmbrSort:
@@ -307,8 +305,9 @@ class AlphaAuth(List):
             if not Org._Name in gInst:
                 gInst.append(Org._Name)
                 nInst = gInst.index(Org._Name) + 1
-                Line = "     $^{" + str(nInst) + "}$ \\> " + \
-                    Org.getAddress() + "\\\\"
+
+                Line = "     " + str(nInst) + \
+                    " & " + Org.getAddress() + "\\\\"
                 self._Lines.append(Line)
             if len(iMmbr._Affiliation) != 0:
                 for iAffil in range(len(iMmbr._Affiliation)):
@@ -316,17 +315,30 @@ class AlphaAuth(List):
                     if not Affil._Name in gInst:
                         gInst.append(Affil._Name)
                         nInst = gInst.index(Affil._Name) + 1
-                        Line = "     $^{" + str(nInst) + "}$ \\> " + \
-                            Affil.getAddress() + "\\\\"
-                        self._Lines.append(Line)
                         
-        Line = "    ~   \\> \\\\"
-        self._Lines.append(Line)
-        Line = "  \\end{tabbing}"
+                        Line = "     " + str(nInst) + \
+                            " & " + Affil.getAddress() + "\\\\"
+                        self._Lines.append(Line)
+
+            if nInst == 13:
+                Line = "  \\end{tabular}"
+                self._Lines.append(Line)
+                Line = "}"
+                self._Lines.append(Line)
+                Line = " "
+                self._Lines.append(Line)
+                Line = " \\vfill"
+                self._Lines.append(Line)
+                Line = "\\noindent\\textit{\\footnotesize"
+                self._Lines.append(Line)
+                Line = "  \\begin{tabular}{ c p{15cm} }"
+                self._Lines.append(Line)
+
+                        
+        Line = "  \\end{tabular}"
         self._Lines.append(Line)
         Line = "}"
         self._Lines.append(Line)
-
             
     
 #--------  List:
@@ -341,7 +353,7 @@ Class AlphaInstAuth: -------->  Author list: ordered first by institute
 """
 class AlphaInstAuth(List):
 
-    __Debug   = True
+    __Debug   = False
 
     def __init__(self, _ListPath, _FileName):
 
@@ -359,13 +371,20 @@ class AlphaInstAuth(List):
 #--------  List elements:
     def getAuthorsByInstitute(self):
 
+        if self.getDebug():
+            print(" AlphaInstAuth.getAuthorsByInstitute start.")
+
         if Mmbr.Member.getInstMemberSort() == None:
             Mmbr.Member.sortByInstituteAndName()
 
         OldOrg   = None
         AuthLine = ""
         for iMmbr in Mmbr.Member.getInstMemberSort():
+            
             Org  = iMmbr._Organisation
+            if self.getDebug():
+                print("     ----> Start on member:", \
+                      iMmbr.getSurname(), iMmbr.getInitials())
             
             if Org != OldOrg:
                 if AuthLine != "":
@@ -377,6 +396,9 @@ class AlphaInstAuth(List):
                     
                 Line = "\\noindent \\textit{" + Org.getAddress() + "} \\\\"
                 self._Lines.append(Line)
+                
+                if self.getDebug():
+                    print("     ----> Line:", Line)
                 
                 OldOrg = Org
                 AuthLine = ""
@@ -392,49 +414,17 @@ class AlphaInstAuth(List):
         Line = "\\vspace{0.5cm}"
         self._Lines.append(Line)
                     
-                
-#--------  List elements:
-    def getHeader(self):
-        self._Header.append("\\vspace{0.75cm}")
-        self._Header.append("\\begin{center}")
-        self._Header.append( \
-       "  {\\bf \\color{BlueViolet} The LhARA collaboration} \\\\")
-        self._Header.append("  \\vspace{0.25cm}")
-        self._Lines.append("\\end{center}")
-
-    def getInstitutes(self):
-        print(" Here: line 520")
-        Line = "\\vspace{0.25cm}"
-        self._Lines.append(Line)
-        Line = "\\noindent\\textit{\\footnotesize"
-        self._Lines.append(Line)
-        Line = "  \\begin{tabbing}"
-        self._Lines.append(Line)
-        Line = "    \\hspace*{0.45cm}\\= \\hspace{17.5cm} \\kill"
-        self._Lines.append(Line)
-
-        if Inst.Institute._AlphaInstAuthSort == None:
-            nClnd  = Mmbr.Member.cleanMemberDatabase()
-            Result = Inst.Institute.sortAlphabeticalByName()
-            if AlphaInstAuth.__Debug:
-                print(" Authors cleaned", nClnd, "members.")
-                print(" sortAlphabeticalbyInstName:", Result)
         
-        nInst = 0
-        for iInst in Inst.Institute._AlphaInstAuthSort:
-            nInst += 1
-            Line = "     " + str(nInst) + \
-                   " \\> " + iInst.getAddress() + "\\\\"
-            self._Lines.append(Line)
-                        
-        Line = "    ~   \\> \\\\"
-        self._Lines.append(Line)
-        Line = "  \\end{tabbing}"
-        self._Lines.append(Line)
-        Line = "}"
-        self._Lines.append(Line)
+#--------  Get/set methods:
+    @classmethod
+    def setDebug(cls, _Debug):
+        cls.__Debug = _Debug
 
-        
+    @classmethod
+    def getDebug(cls):
+        return cls.__Debug
+
+
 #--------  Exceptions:
 class NoListNameProvided:
     pass

@@ -1,11 +1,11 @@
-Title,Name,Surname,Initials,email address,Name on Publications ,Organisation,Address,Number of affiliations,Affiliation code,Affiliation address,Affiliation code2,Affiliation address3,ORCID ,Role
-Dr,Jean-Baptiste,Lagrange,J.B.,jean-baptiste.lagrange@STFC.AC.UK,J.B. Lagrange,STFC-ISIS,"ISIS Neutron and Muon Source, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",False,,,,,,
-Dr,Christopher ,Rogers,C.T.,chris.rogers@STFC.AC.UK,C. Rogers,STFC-ISIS,"ISIS Neutron and Muon Source, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",False,,,,,,
-Dr,John,Thomason,J.W.G.,john.thomason@stfc.ac.uk,J.W.G. Thomason,STFC-ISIS,"ISIS Neutron and Muon Source, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",False,,,,,,IB
-Mr,Neil,Bliss,N.,neil.bliss@stfc.ac.uk,N. Bliss,STFC-TD-DL,"STFC Daresbury Laboratory, Daresbury, Cheshire, WA4 4AD, UK",False,,,,,,
-Ms,Anna,Vikhoreva,A.,anna.vikhoreva@STFC.AC.UK,A. Vikhoreva,STFC-TD-DL,"STFC Daresbury Laboratory, Daresbury, Cheshire, WA4 4AD, UK",False,,,,,,
-Prof. ,James,Clarke,J.,jim.clarke@stfc.ac.uk,J. Clarke,STFC-ASTeC,"STFC Daresbury Laboratory, Daresbury, Cheshire, WA4 4AD, UK",False,,,,,,IB
-Dr,Hywel,Owen,H.,hywel.owen@STFC.AC.UK,H. Owen,STFC-ASTeC,"STFC Daresbury Laboratory, Daresbury, Cheshire, WA4 4AD, UK",False,,,,,,
-Dr,Benjamin,Smart,B.,ben.smart@stfc.ac.uk,B.Smart,STFC-PPD,"Particle Physics Department, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",False,,,,,,
-Dr.,Rajeev,Pattathil,R.,rajeev.pattathil@stfc.ac.uk,R.Pattathil,STFC-CLF,"Central Laser Facility, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",False,,,,,,
-Dr.,Hamad,Ahmed,H.,hamad.ahmed@stfc.ac.uk,H.Ahmed,STFC-CLF,"Central Laser Facility, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",False,,,,,,
+﻿Title,Name,Surname,Initials,email address,Name on Publications ,Organisation,Address,Number of affiliations,Affiliation code,Affiliation address,Affiliation code2,Affiliation address3,ORCID ,Role
+Dr,Jean-Baptiste,Lagrange,J.B.,jean-baptiste.lagrange@STFC.AC.UK,J.B. Lagrange,STFC-ISIS,"ISIS Neutron and Muon Source, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",0,,,,,,
+Dr,Christopher ,Rogers,C.T.,chris.rogers@STFC.AC.UK,C. Rogers,STFC-ISIS,"ISIS Neutron and Muon Source, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",0,,,,,,
+Dr,John,Thomason,J.W.G.,john.thomason@stfc.ac.uk,J.W.G. Thomason,STFC-ISIS,"ISIS Neutron and Muon Source, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",0,,,,,,IB
+Mr,Neil,Bliss,N.,neil.bliss@stfc.ac.uk,N. Bliss,STFC-TD-DL,"Technology Department, STFC Daresbury Laboratory, Daresbury, Cheshire, WA4 4AD, UK",0,,,,,,
+Ms,Anna,Vikhoreva,A.,anna.vikhoreva@STFC.AC.UK,A. Vikhoreva,STFC-TD-DL,"Technology Department, STFC Daresbury Laboratory, Daresbury, Cheshire, WA4 4AD, UK",0,,,,,,
+Prof. ,James,Clarke,J.,jim.clarke@stfc.ac.uk,J. Clarke,STFC-ASTeC,"Accelerator Science and Technology Centre, STFC Daresbury Laboratory, Daresbury, Cheshire, WA4 4AD, UK",0,,,,,,IB
+Dr,Hywel,Owen,H.,hywel.owen@STFC.AC.UK,H. Owen,STFC-ASTeC,"Accelerator Science and Technology Centre, STFC Daresbury Laboratory, Daresbury, Cheshire, WA4 4AD, UK",0,,,,,,
+Dr,Benjamin,Smart,B.,ben.smart@stfc.ac.uk,B.Smart,STFC-PPD,"Particle Physics Department, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",0,,,,,,
+Dr.,Rajeev,Pattathil,R.,rajeev.pattathil@stfc.ac.uk,R.Pattathil,STFC-CLF,"Central Laser Facility, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",0,,,,,,
+Dr.,Hamad,Ahmed,H.,hamad.ahmed@stfc.ac.uk,H.Ahmed,STFC-CLF,"Central Laser Facility, STFC Rutherford Appleton Laboratory, Harwell Oxford, Didcot OX11 0QX, UK",0,,,,,,

@@ -41,9 +41,6 @@ for file in fileLIST:
         newMembers = Mmbr.Member.parseMemberDatabase(filePATH)
         nMembers  += newMembers
 
-for iINST in inst.Institute.getinstances():
-    print(iINST.getName())
-
 ##! Make lists:
 print("========  Make lists  ========")
 
