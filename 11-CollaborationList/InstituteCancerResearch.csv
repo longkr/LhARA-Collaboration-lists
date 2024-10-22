@@ -1,4 +1,4 @@
-Title,Name,Surname,Initials,email address,Name on Publications ,Organisation,Address,Number of affiliations,Affiliation code,Affiliation address,Affiliation code2,Affiliation address3,ORCID ,Role
-Prof. ,Jeffrey,Bamber,J.,jeffrey.bamber@icr.ac.uk,J. Bamber,ICR,"The Institute of Cancer Research, 123 Old Brompton Road, London, SW7 3RP, UK",False,,,,,0000-0001-9436-1832,IB
-Dr ,Emma,Harris ,E.J. ,Emma.Harris@icr.ac.uk,Emma J. Harris,ICR,"Joint Department of Physics, Institute of Cancer Research London, SM2 5NG, UK",False,,,,,0000-0001-8297-0382,IB
-Prof. ,Uwe,Oelfke,U.,uwe.oelfke@ICR.AC.UK,U. Oelfke,ICR,"The Institute of Cancer Research, 123 Old Brompton Road, London, SW7 3RP, UK",False,,,,,,
+﻿Title,Name,Surname,Initials,email address,Name on Publications ,Organisation,Address,Number of affiliations,Affiliation code,Affiliation address,Affiliation code2,Affiliation address3,ORCID ,Role
+Prof. ,Jeffrey,Bamber,J.,jeffrey.bamber@icr.ac.uk,J. Bamber,ICR,"The Institute of Cancer Research, 123 Old Brompton Road, London, SW7 3RP, UK",0,,,,,0000-0001-9436-1832,IB
+Dr ,Emma,Harris,E.J.,Emma.Harris@icr.ac.uk,Emma J. Harris,ICR,"Joint Department of Physics, Institute of Cancer Research London, SM2 5NG, UK",0,,,,,0000-0001-8297-0382,IB
+Prof. ,Uwe,Oelfke,U.,uwe.oelfke@ICR.AC.UK,U. Oelfke,ICR,"The Institute of Cancer Research, 123 Old Brompton Road, London, SW7 3RP, UK",0,,,,,,
