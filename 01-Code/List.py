@@ -379,6 +379,8 @@ class AlphaInstAuth(List):
 
         OldOrg   = None
         AuthLine = ""
+        nAffils  = 0
+        Affils   = []
         for iMmbr in Mmbr.Member.getInstMemberSort():
             
             Org  = iMmbr._Organisation
@@ -388,12 +390,23 @@ class AlphaInstAuth(List):
             
             if Org != OldOrg:
                 if AuthLine != "":
+                    AuthLine += " \\\\"
                     self._Lines.append(AuthLine)
+                    if nAffils > 0:
+                        Line = "{\\footnotesize"
+                        self._Lines.append(Line)
+                        n = 0
+                        for iAffil in Affils:
+                            n   += 1
+                            Line = "  " + str(n) + ". Also at " + \
+                                   iAffil.getAddress() + " \\\\"
+                            self._Lines.append(Line)
+                        Line = "}"
+                        self._Lines.append(Line)
+                    
                     Line = " "
                     self._Lines.append(Line)
-                    Line = "\\vspace{0.5cm}"
-                    self._Lines.append(Line)
-                    
+
                 Line = "\\noindent \\textit{" + Org.getAddress() + "} \\\\"
                 self._Lines.append(Line)
                 
@@ -402,17 +415,54 @@ class AlphaInstAuth(List):
                 
                 OldOrg = Org
                 AuthLine = ""
+                nAffils  = 0
+                Affils   = []
 
             if AuthLine != "": AuthLine += ", "
             
             Author    =  iMmbr.getInitials() + "~" + iMmbr.getSurname()
             AuthLine += Author
 
+            #.. Check for "also at":
+            AuthAffil = ""
+            if len(iMmbr.getAffiliation()) > 0:
+                AuthAffil += "$^{"
+                for iAffil in iMmbr.getAffiliation():
+                    if AuthAffil != "$^{":
+                        AuthAffil += ", "
+                    if iAffil not in Affils:
+                        nAffils += 1
+                        Affils.append(iAffil)
+                        iSuper = nAffils
+                    else:
+                        iSuper = Affils.index(iAffil) + 1
+                    
+                    AuthAffil += str(iSuper)
+
+                AuthLine += AuthAffil + "}$"
+                if self.getDebug():
+                    print("         ----> AuthLine):", AuthLine)
+
+                    
+        AuthLine += " \\\\"
         self._Lines.append(AuthLine)
+        if nAffils > 0:
+            Line = "{\\footnotesize"
+            self._Lines.append(Line)
+            n = 0
+            for iAffil in Affils:
+                n   += 1
+                Line = "  " + str(n) + ". Also at " + \
+                    iAffil.getAddress() + " \\\\"
+                self._Lines.append(Line)
+            Line = "}"
+            self._Lines.append(Line)
+                        
         Line = " "
         self._Lines.append(Line)
         Line = "\\vspace{0.5cm}"
         self._Lines.append(Line)
+        
                     
         
 #--------  Get/set methods:

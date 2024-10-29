@@ -280,6 +280,9 @@ class Member:
     def getemail(self):
         return self._email
 
+    def getAffiliation(self):
+        return self._Affiliation
+    
     def getOrganisation(self):
         return self._Organisation
     
