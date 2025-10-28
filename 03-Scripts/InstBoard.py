@@ -24,11 +24,34 @@ print()
 print(" ----> Block:", Block, " initialise.")
 
 LhARAPATH = os.getenv('LhARAPATH')
+fileDIR  = os.path.join(LhARAPATH, '11-CollaborationList')
+print("     ----> Directory to get files from:", fileDIR)
+
+try:
+    filepath     = os.path.join(LhARAPATH, '99-Scratch')
+except:
+    print("     ----> Failed to create path to scratch directory!", \
+          "  Execution terminated.")
+    raise Exception
+
+##! Load:
+print("========  Load files  ========")
+fileLIST = sorted(os.listdir(fileDIR))
+nMembers = 0
+for file in fileLIST:
+    if file.find('.csv') <= 0:
+        pass
+    else:
+        filePATH = os.path.join(fileDIR, file)
+        newMembers = Mmbr.Member.parseMemberDatabase(filePATH)
+        nMembers  += newMembers
+        
+print("     ----> OK!", nMembers, " members read.")
+
 filename  = os.path.join(LhARAPATH, \
-                         '11-CollaborationList/new-spread.csv')
-print("     ----> Member database file name:", filename)
-nMbrs = Mmbr.Member.parseMemberDatabase(filename)
-print("     ----> OK!", nMbrs, " members read.")
+                         '12-CCAP-LhARA-JISCMAIL/new-JISCMAIL-lst.csv')
+JISCMlLst = pnds.read_csv(filename)
+print("     ----> OK!", JISCMlLst.shape[0], " email addresses found.")
 print(" <---- Initialisation done.")
 
 ##! Clean and sort members
@@ -60,11 +83,15 @@ print()
 print(" ----> Block:", Block, " IB members by institute.")
 Result = Instt.Institute.sortAlphabeticalByName()
 for iInst in Instt.Institute.getAlphaInstituteSort():
+    iCnt = 0
     print("     ----> Institute:", iInst.getName())
     for iMmbr in IBmmbr:
         if iMmbr.getOrganisation().getName() == iInst.getName():
             print("         ----> iMmbr:", \
                    iMmbr.getSurname(), iMmbr.getInitials())
+            iCnt += 1
+    if iCnt == 0:
+        print("         ----> No institute board representative!")
 print(" <--- IB members by institute done.")
 
 

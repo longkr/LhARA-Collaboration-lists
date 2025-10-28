@@ -17,17 +17,35 @@ import Member as Mmbr
 print(" ========  compareJISCMAIL2CollaborationLst start  ========")
 
 
-##! Read membership list and mailing list
+##! --------  Read membership list and mailing list
 Block = 1
 print()
 print(" ----> Block:", Block, " initialise.")
 
 LhARAPATH = os.getenv('LhARAPATH')
-filename  = os.path.join(LhARAPATH, \
-                         '11-CollaborationList/new-spread.csv')
-print("     ----> Member database file name:", filename)
-nMbrs = Mmbr.Member.parseMemberDatabase(filename)
-print("     ----> OK!", nMbrs, " members read.")
+fileDIR  = os.path.join(LhARAPATH, '11-CollaborationList')
+print("     ----> Directory to get files from:", fileDIR)
+
+try:
+    filepath     = os.path.join(LhARAPATH, '99-Scratch')
+except:
+    print("     ----> Failed to create path to scratch directory!", \
+          "  Execution terminated.")
+    raise Exception
+
+##! Load:
+print("========  Load files  ========")
+fileLIST = sorted(os.listdir(fileDIR))
+nMembers = 0
+for file in fileLIST:
+    if file.find('.csv') <= 0:
+        pass
+    else:
+        filePATH = os.path.join(fileDIR, file)
+        newMembers = Mmbr.Member.parseMemberDatabase(filePATH)
+        nMembers  += newMembers
+        
+print("     ----> OK!", nMembers, " members read.")
 
 filename  = os.path.join(LhARAPATH, \
                          '12-CCAP-LhARA-JISCMAIL/new-JISCMAIL-lst.csv')
@@ -35,7 +53,7 @@ JISCMlLst = pnds.read_csv(filename)
 print("     ----> OK!", JISCMlLst.shape[0], " email addresses found.")
 print(" <---- Initialisation done.")
 
-##! Clean and sort members
+##! --------  Clean and sort members
 Block += 1
 print()
 print(" ----> Block:", Block, " sort members by name.")
@@ -45,34 +63,48 @@ Result = Mmbr.Member.sortAlphabeticalByName()
 print("     ---->", Result)
 print(" <--- Cleaning and sorting done.")
 
-##! Emails not in membership list
+##! Members not in email list
 Block += 1
 print()
 JISCMlLst["email"] = JISCMlLst["email"].apply(str.lower)
-print(" ----> Block:", Block, " search for emails not in membership list.")
+print(" ----> Block:", Block, \
+      " search for members whose emails are not in list.")
+iCnt = 0
 for iMmbr in Mmbr.Member.getAlphaMemberSort():
     if iMmbr.getemail().lower() in JISCMlLst.values:
         pass
     else:
-        print("        ----> Member", \
+        print("     ----> Member", \
               iMmbr.getSurname(), ", ", iMmbr.getInitials(), \
               " email:", iMmbr.getemail(), \
               " not in JISCMail list.")
-print(" <--- List of emails not in membership list, done.")
+        iCnt += 1
+if iCnt == 0:
+    print("     ----> All emails in JISCMAIL list correspond to members")
+        
+print(" <---- List of emails not in membership list, done.")
 
-##! Members not in email list
+##! Emails not in list of members
 Block += 1
 print()
-print(" ----> Block:", Block, " search for members not in email list.")
+iCnt = 0
+print(" ----> Block:", Block, " people in email list who are not members")
 for iRow in JISCMlLst.itertuples(index = True):
-    JISCemail = getattr(iRow, "email")
-    Mmbremail = getattr(Mmbr.Member.getAlphaMemberSort(), "_email", \
-                        JISCemail)
-    if JISCemail != Mmbremail:
-        print("        ----> JISCMAIL entry", getattr(iRow, "email"), \
+    JISCemail = getattr(iRow, "email").lower()
+    foundMEMBER = False
+    for iMmbr in Mmbr.Member.getAlphaMemberSort():
+        Mmbremail = iMmbr.getemail().lower()
+        if JISCemail == Mmbremail:
+            foundMEMBER = True
+    
+    if not foundMEMBER:
+        print("     ----> JISCMAIL entry", JISCemail, \
               " not a member of LhARA.")
-print(" <--- List of members not in JISCMaill list, done.")
+        iCnt += 1
+if iCnt == 0:
+    print("     ----> All members are in JISCMAIL list")
 
+print(" <--- List of members not in JISCMaill list, done.")
 
 ##! Complete:
 print()

@@ -25,7 +25,7 @@ print("     ----> Directory to get files from:", fileDIR)
 try:
     filepath     = os.path.join(LhARAPATH, '99-Scratch')
 except:
-    print("     ----> Failed to create alphabetic author list list instance!",
+    print("     ----> Failed to create path to scratch directory!", \
           "  Execution terminated.")
     raise Exception
 
