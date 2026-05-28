@@ -59,5 +59,8 @@ AlphaAuthTxtLst.writeList()
 AlphaInstTxtLst = Lst.AlphaInstTxt(filepath, "03-InstituteList.txt")
 AlphaInstTxtLst.writeList()
 
+AlphaInstTxtLst = Lst.InstituteCountry(filepath, "03-InstituteCountry.txt")
+AlphaInstTxtLst.writeList()
+
 ##! Complete:
 print("========  Complete  ========")
