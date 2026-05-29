@@ -620,6 +620,8 @@ class InstituteCountry(List):
             print("     ----> Institute list:")
         Line = ""
         for iInst in Inst.Institute._AlphaInstSort:
+            if self.getDebug():
+                print("     ----> Process institute:", iInst.getName())
             nInst += 1
             Addr = iInst.getAddress().split(',')
             Line += Addr[0] + " (" + Addr[-1].strip() + "), "
